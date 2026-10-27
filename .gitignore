@@ -1,0 +1,12 @@
+# Excel lock files
+~$*
+
+# Working copy of the Excel file in the top folder
+# (the published copy is in data/zh13-wm82a4/)
+/*.xlsx
+
+.claude/
+__pycache__/
+.DS_Store
+Thumbs.db
+desktop.ini

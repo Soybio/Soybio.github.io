@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZH13 to Wm82.a4 gene ID conversion – Soybio</title>
+  <meta name="description" content="One-to-one gene ID conversion table between the soybean genomes Zhonghuang 13 (ZH13) and Williams 82 assembly 4 (Wm82.a4), with confidence levels and evidence.">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <span>
+          <span class="brand-name">Soybio</span>
+          <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/data.html" aria-current="page">Data</a></li>
+          <li><a href="/converter.html">Gene ID Converter</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/data.html">Data</a><span aria-hidden="true">/</span>ZH13 to Wm82.a4 gene ID conversion</div>
+        <h1>ZH13 to Wm82.a4 gene ID conversion</h1>
+        <p class="lead">One-to-one gene ID table between the soybean genomes Zhonghuang 13 (ZH13) and Williams 82 assembly 4 (Wm82.a4), in both directions.</p>
+      </div>
+    </section>
+
+    <div class="container content">
+      <div class="with-aside">
+        <div class="main-col">
+
+          <h2 id="overview">Overview</h2>
+          <p>This table gives, for each ZH13 gene, the matching Wm82.a4 gene, and for each Wm82.a4 gene, the matching ZH13 gene. Gene pairs were identified by synteny with MCscan and checked with a whole-genome liftover of ZH13 genes onto Wm82.a4. Each pair has a confidence level and a short evidence note. The results were also compared with the gene ID converter of SoyOD.</p>
+          <dl class="facts">
+            <dt>Genomes</dt>
+            <dd>Zhonghuang 13 (ZH13) and Williams 82 assembly 4 (Wm82.a4)</dd>
+            <dt>ZH13 genes</dt>
+            <dd>55,443</dd>
+            <dt>Wm82.a4 genes</dt>
+            <dd>52,872</dd>
+            <dt>Gene pairs</dt>
+            <dd>43,348 one-to-one pairs (42,560 High, 788 Medium)</dd>
+            <dt>Extra IDs</dt>
+            <dd>Wm82.a2.v1 gene IDs, gene locations and Wm82.a4 gene descriptions</dd>
+            <dt>Version</dt>
+            <dd>1.0, October 2026</dd>
+          </dl>
+
+          <h2 id="downloads">Downloads</h2>
+          <p>Click a file name to download it. No account is needed.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">File</th>
+                  <th scope="col">Contents</th>
+                  <th scope="col" class="num">Size</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="/data/zh13-wm82a4/ZH13_to_Wm82a4_gene_ID_conversion.xlsx" download>ZH13_to_Wm82a4_gene_ID_conversion.xlsx</a></td>
+                  <td>Excel file with both sheets: ZH13 to Wm82.a4, and Wm82.a4 to ZH13</td>
+                  <td class="num">7.7 MB</td>
+                </tr>
+                <tr>
+                  <td><a href="/data/zh13-wm82a4/ZH13_to_Wm82a4.tsv" download>ZH13_to_Wm82a4.tsv</a></td>
+                  <td>Sheet "ZH13_to_Wm82.a4" as plain text (one row per ZH13 gene)</td>
+                  <td class="num">21.2 MB</td>
+                </tr>
+                <tr>
+                  <td><a href="/data/zh13-wm82a4/Wm82a4_to_ZH13.tsv" download>Wm82a4_to_ZH13.tsv</a></td>
+                  <td>Sheet "Wm82.a4_to_ZH13" as plain text (one row per Wm82.a4 gene)</td>
+                  <td class="num">12.6 MB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted">To download from a Linux server, use for example:<br><code>wget https://soybio.github.io/data/zh13-wm82a4/ZH13_to_Wm82a4.tsv</code></p>
+
+          <h2 id="summary">Summary</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Number of genes by confidence level</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Confidence</th>
+                  <th scope="col" class="num">ZH13 genes</th>
+                  <th scope="col" class="num">%</th>
+                  <th scope="col" class="num">Wm82.a4 genes</th>
+                  <th scope="col" class="num">%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td class="num">42,560</td><td class="num">76.8</td>
+                  <td class="num">42,560</td><td class="num">80.5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-medium">Medium</span></td>
+                  <td class="num">788</td><td class="num">1.4</td>
+                  <td class="num">788</td><td class="num">1.5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-none">No correspondence</span></td>
+                  <td class="num">12,095</td><td class="num">21.8</td>
+                  <td class="num">9,524</td><td class="num">18.0</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total</td>
+                  <td class="num">55,443</td><td class="num">100.0</td>
+                  <td class="num">52,872</td><td class="num">100.0</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <caption>Comparison with the SoyOD gene ID converter (ZH13 genes)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Agreement_with_SoyOD</th>
+                  <th scope="col">Meaning</th>
+                  <th scope="col" class="num">ZH13 genes</th>
+                  <th scope="col" class="num">%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="nowrap">same gene</td><td>Both give the same Wm82.a4 gene</td><td class="num">39,340</td><td class="num">71.0</td></tr>
+                <tr><td class="nowrap">same gene (SoyOD also lists other genes)</td><td>SoyOD gives the same gene plus other genes</td><td class="num">415</td><td class="num">0.7</td></tr>
+                <tr><td class="nowrap">different gene</td><td>Both give a gene, but not the same one</td><td class="num">371</td><td class="num">0.7</td></tr>
+                <tr><td class="nowrap">SoyOD: no correspondence</td><td>This table gives a gene; SoyOD gives none</td><td class="num">3,222</td><td class="num">5.8</td></tr>
+                <tr><td class="nowrap">only SoyOD gives a gene</td><td>SoyOD gives a gene; this table gives none</td><td class="num">722</td><td class="num">1.3</td></tr>
+                <tr><td class="nowrap">both: no correspondence</td><td>Neither gives a gene</td><td class="num">11,373</td><td class="num">20.5</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td>Total</td><td></td><td class="num">55,443</td><td class="num">100.0</td></tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <h2 id="confidence">Confidence levels</h2>
+          <p>The confidence level depends on two kinds of evidence: synteny (MCscan) and whole-genome liftover. The <code>Evidence</code> column gives the exact reason for each gene.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Confidence</th>
+                  <th scope="col">Evidence</th>
+                  <th scope="col" class="num">ZH13 genes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2"><span class="badge badge-high">High</span></td>
+                  <td>Syntenic ortholog (MCscan anchor), confirmed by whole-genome liftover</td>
+                  <td class="num">38,588</td>
+                </tr>
+                <tr>
+                  <td>Syntenic ortholog (MCscan lifted anchor), confirmed by whole-genome liftover</td>
+                  <td class="num">3,972</td>
+                </tr>
+                <tr>
+                  <td rowspan="2"><span class="badge badge-medium">Medium</span></td>
+                  <td>Syntenic ortholog, but the liftover lands on a different Wm82.a4 gene (usually a neighbouring tandem copy)</td>
+                  <td class="num">436</td>
+                </tr>
+                <tr>
+                  <td>Syntenic ortholog, but the liftover finds no Wm82.a4 gene at this locus</td>
+                  <td class="num">352</td>
+                </tr>
+                <tr>
+                  <td rowspan="3"><span class="badge badge-none">No correspondence</span></td>
+                  <td>No syntenic ortholog; the locus aligns to Wm82.a4, but no Wm82.a4 gene is annotated there</td>
+                  <td class="num">9,893</td>
+                </tr>
+                <tr>
+                  <td>No syntenic ortholog; the liftover overlaps a Wm82.a4 gene, but MCscan finds no syntenic support</td>
+                  <td class="num">1,310</td>
+                </tr>
+                <tr>
+                  <td>No syntenic ortholog; only part of the CDS aligns to Wm82.a4 (gene absent or highly divergent in Wm82.a4)</td>
+                  <td class="num">892</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li><strong>MCscan anchor:</strong> the gene pair was found directly in a synteny block.</li>
+            <li><strong>MCscan lifted anchor:</strong> the gene pair was added by MCscan inside an existing synteny block.</li>
+            <li><strong>Medium pairs</strong> are supported by synteny, but the liftover does not agree. Please check these pairs if the gene is important for your work, especially in tandem gene families.</li>
+          </ul>
+
+          <h2 id="columns">Column descriptions</h2>
+          <h3>Sheet "ZH13_to_Wm82.a4" (one row per ZH13 gene)</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Column</th><th scope="col">Description</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>ZH13_gene_ID</code></td><td>ZH13 gene ID</td></tr>
+                <tr><td><code>Wm82.a4_gene_ID</code></td><td>Matching Wm82.a4 gene ID. Empty if there is no match.</td></tr>
+                <tr><td><code>Confidence</code></td><td>High, Medium or No correspondence (see <a href="#confidence">Confidence levels</a>)</td></tr>
+                <tr><td><code>Evidence</code></td><td>How the match was found, or why there is no match</td></tr>
+                <tr><td><code>Liftover_Wm82.a4_gene</code></td><td>Wm82.a4 gene found by the whole-genome liftover of the ZH13 gene</td></tr>
+                <tr><td><code>Protein_identity_%</code></td><td>Protein sequence identity between the ZH13 gene and the matching Wm82.a4 gene (%)</td></tr>
+                <tr><td><code>CDS_lifted_onto_this_gene_%</code></td><td>Part of the ZH13 coding sequence (CDS) that the liftover places on the matching Wm82.a4 gene (%)</td></tr>
+                <tr><td><code>Synteny_block</code></td><td>MCscan synteny block that contains the gene pair, with the number of gene pairs in the block</td></tr>
+                <tr><td><code>ZH13_location</code></td><td>Location of the ZH13 gene, written as chromosome:start-end(strand)</td></tr>
+                <tr><td><code>Wm82.a4_location</code></td><td>Location of the matching Wm82.a4 gene</td></tr>
+                <tr><td><code>Wm82.a2.v1_ID</code></td><td>Wm82.a2.v1 ID of the matching Wm82.a4 gene, if one exists</td></tr>
+                <tr><td><code>SoyOD_converter_answer</code></td><td>Wm82.a4 gene(s) given by the SoyOD gene ID converter for the same ZH13 gene</td></tr>
+                <tr><td><code>Agreement_with_SoyOD</code></td><td>Whether this table and SoyOD give the same answer (see <a href="#summary">Summary</a>)</td></tr>
+                <tr><td><code>Wm82.a4_description</code></td><td>Functional description of the matching Wm82.a4 gene</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Sheet "Wm82.a4_to_ZH13" (one row per Wm82.a4 gene)</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Column</th><th scope="col">Description</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>Wm82.a4_gene_ID</code></td><td>Wm82.a4 gene ID</td></tr>
+                <tr><td><code>ZH13_gene_ID</code></td><td>Matching ZH13 gene ID. Empty if there is no match.</td></tr>
+                <tr><td><code>Confidence</code></td><td>High, Medium or No correspondence</td></tr>
+                <tr><td><code>Wm82.a2.v1_ID</code></td><td>Wm82.a2.v1 ID of the Wm82.a4 gene, if one exists</td></tr>
+                <tr><td><code>Wm82.a4_location</code></td><td>Location of the Wm82.a4 gene, written as chromosome:start-end(strand)</td></tr>
+                <tr><td><code>Wm82.a4_description</code></td><td>Functional description of the Wm82.a4 gene</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted">ZH13 chromosomes are named Chr01 to Chr20. Wm82.a4 chromosomes are named Gm01 to Gm20.</p>
+
+          <h2 id="usage">How to use</h2>
+          <ul>
+            <li><strong>Online:</strong> paste your gene IDs into the <a href="/converter.html">Gene ID Converter</a>.</li>
+            <li><strong>In Excel:</strong> open the Excel file, choose the sheet for the direction you need, and search with Find (Ctrl+F).</li>
+            <li><strong>In R, Python or on the command line:</strong> use the TSV files, as in the examples below.</li>
+          </ul>
+
+          <h3>R</h3>
+<pre><code>zh2wm &lt;- read.delim("ZH13_to_Wm82a4.tsv", check.names = FALSE)
+my_genes &lt;- c("SoyZH13_01G000024", "SoyZH13_01G029800")
+subset(zh2wm, ZH13_gene_ID %in% my_genes)[, c("ZH13_gene_ID", "Wm82.a4_gene_ID", "Confidence")]</code></pre>
+
+          <h3>Python</h3>
+<pre><code>import pandas as pd
+
+zh2wm = pd.read_csv("ZH13_to_Wm82a4.tsv", sep="\t")
+my_genes = ["SoyZH13_01G000024", "SoyZH13_01G029800"]
+zh2wm[zh2wm["ZH13_gene_ID"].isin(my_genes)][["ZH13_gene_ID", "Wm82.a4_gene_ID", "Confidence"]]</code></pre>
+
+          <h3>Command line</h3>
+<pre><code>grep -w "SoyZH13_01G000024" ZH13_to_Wm82a4.tsv | cut -f 1-3</code></pre>
+
+          <h2 id="cite">How to cite</h2>
+          <p>If you use this table in a publication, please cite:</p>
+          <div class="note">
+            <p>Soybio (2026). ZH13 to Wm82.a4 gene ID conversion table, version 1.0. Available at https://soybio.github.io/data/zh13-wm82a4/</p>
+          </div>
+          <p>Please also cite the original publications of the ZH13 and Wm82.a4 genome assemblies.</p>
+
+          <h2 id="versions">Version history</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">Changes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1.0</td><td class="nowrap">October 2026</td><td>First release</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside>
+          <div class="panel">
+            <h2>Download</h2>
+            <a class="btn" href="/data/zh13-wm82a4/ZH13_to_Wm82a4_gene_ID_conversion.xlsx" download>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1a.75.75 0 0 1 .75.75v6.69l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 0 1 1.06-1.06l2.22 2.22V1.75A.75.75 0 0 1 8 1ZM2.75 12.5a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H2.75Z"/></svg>
+              Excel file (7.7 MB)
+            </a>
+            <a class="btn btn-outline" href="/data/zh13-wm82a4/ZH13_to_Wm82a4.tsv" download>ZH13 to Wm82.a4 (TSV)</a>
+            <a class="btn btn-outline" href="/data/zh13-wm82a4/Wm82a4_to_ZH13.tsv" download>Wm82.a4 to ZH13 (TSV)</a>
+          </div>
+          <div class="panel">
+            <h2>Convert online</h2>
+            <p class="small">Convert a list of gene IDs without downloading files.</p>
+            <a class="btn btn-outline" href="/converter.html">Gene ID Converter</a>
+          </div>
+          <nav class="panel toc" aria-label="On this page">
+            <h2>On this page</h2>
+            <ul>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#downloads">Downloads</a></li>
+              <li><a href="#summary">Summary</a></li>
+              <li><a href="#confidence">Confidence levels</a></li>
+              <li><a href="#columns">Column descriptions</a></li>
+              <li><a href="#usage">How to use</a></li>
+              <li><a href="#cite">How to cite</a></li>
+              <li><a href="#versions">Version history</a></li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
+      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>

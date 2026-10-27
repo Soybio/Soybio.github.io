@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gene ID Converter – Soybio</title>
+  <meta name="description" content="Convert soybean gene IDs between Zhonghuang 13 (ZH13), Williams 82 assembly 4 (Wm82.a4) and Wm82.a2.v1.">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <span>
+          <span class="brand-name">Soybio</span>
+          <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/data.html">Data</a></li>
+          <li><a href="/converter.html" aria-current="page">Gene ID Converter</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Gene ID Converter</div>
+        <h1>Gene ID Converter</h1>
+        <p class="lead">Convert soybean gene IDs between ZH13 and Wm82.a4. You can also enter Wm82.a2.v1 gene IDs.</p>
+      </div>
+    </section>
+
+    <div class="container content">
+      <form class="tool" id="converter-form" autocomplete="off">
+        <label class="field-label" for="ids">Gene IDs</label>
+        <textarea id="ids" name="ids" spellcheck="false" placeholder="One gene ID per line, for example:&#10;SoyZH13_01G000024&#10;Glyma.01G000600"></textarea>
+        <p class="small muted help">Enter one ID per line, or separate IDs with spaces or commas. Transcript and protein suffixes (for example <code>.1</code>, <code>.m1</code>, <code>.1.p</code>) are removed automatically. Up to 20,000 IDs at a time.</p>
+
+        <fieldset class="options">
+          <legend>Input ID type</legend>
+          <label><input type="radio" name="idtype" value="auto" checked> Detect automatically</label>
+          <label><input type="radio" name="idtype" value="zh"> ZH13</label>
+          <label><input type="radio" name="idtype" value="wm"> Wm82.a4</label>
+          <label><input type="radio" name="idtype" value="a2"> Wm82.a2.v1</label>
+        </fieldset>
+
+        <div class="btn-row">
+          <button type="submit" class="btn" id="convert" disabled>Convert</button>
+          <button type="button" class="btn btn-outline" id="example">Load example</button>
+          <button type="button" class="btn btn-outline" id="clear">Clear</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite">Loading the conversion table…</p>
+      </form>
+
+      <section id="results" hidden>
+        <div class="results-head">
+          <h2>Results</h2>
+          <div class="btn-row">
+            <label class="toggle"><input type="checkbox" id="all-columns"> Show all columns</label>
+            <button type="button" class="btn btn-outline btn-small" id="copy">Copy table</button>
+            <button type="button" class="btn btn-small" id="download">Download CSV</button>
+          </div>
+        </div>
+        <p class="results-summary" id="summary"></p>
+        <div class="table-wrap">
+          <table id="results-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="small muted" id="results-note"></p>
+      </section>
+
+      <h2>Notes</h2>
+      <ul>
+        <li>With <strong>Detect automatically</strong>, IDs starting with <code>SoyZH13_</code> are read as ZH13 IDs, and IDs starting with <code>Glyma.</code> are read as Wm82.a4 IDs. If a <code>Glyma.</code> ID is not a Wm82.a4 gene, it is looked up as a Wm82.a2.v1 ID.</li>
+        <li>Wm82.a2.v1 IDs are converted through the matching Wm82.a4 gene.</li>
+        <li>For the meaning of High, Medium and No correspondence, see <a href="/data/zh13-wm82a4/#confidence">Confidence levels</a>.</li>
+        <li>The converter uses the <a href="/data/zh13-wm82a4/">ZH13 to Wm82.a4 gene ID conversion table</a> (version 1.0, October 2026). It runs in your browser; your gene lists are not sent anywhere.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
+      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/converter.js"></script>
+</body>
+</html>
