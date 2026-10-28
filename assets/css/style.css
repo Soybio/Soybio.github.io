@@ -179,7 +179,7 @@ pre code {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.5rem 2rem;
+  gap: 0.5rem 1.2rem;
   padding-top: 14px;
   padding-bottom: 14px;
 }
@@ -232,9 +232,9 @@ pre code {
 
 .site-nav a {
   display: block;
-  padding: 0.45rem 0.7rem;
+  padding: 0.45rem 0.5rem;
   color: var(--text);
-  font-size: 0.97rem;
+  font-size: 0.93rem;
   font-weight: 500;
   border-bottom: 2px solid transparent;
 }
@@ -924,6 +924,54 @@ td.desc-cell {
 .badge-down {
   background: #e0ecf7;
   color: #1f4f7a;
+}
+
+.term-list {
+  margin: 0 0 0.8rem;
+}
+
+.term-list li {
+  margin-bottom: 0.15rem;
+}
+
+#single h4,
+#predict-body h4 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin: 1rem 0 0.4rem;
+}
+
+#predict-body h4:first-child {
+  margin-top: 0;
+}
+
+tr.sig-row td {
+  background: #f3f8f4;
+}
+
+#enrich-table details summary {
+  cursor: pointer;
+  color: var(--link);
+  white-space: nowrap;
+}
+
+#enrich-table details div {
+  max-width: 420px;
+  margin-top: 0.3rem;
+}
+
+.bg-box {
+  margin: 0.8rem 0 1rem;
+}
+
+.bg-box summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--link);
+}
+
+.bg-box textarea {
+  min-height: 110px;
 }
 
 /* ---------- Footer ---------- */

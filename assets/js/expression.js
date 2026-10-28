@@ -275,12 +275,17 @@
     dl.className = 'facts';
     var add = function (k, v) {
       var dt = document.createElement('dt'); dt.textContent = k;
-      var dd = document.createElement('dd'); dd.textContent = v;
+      var dd = document.createElement('dd');
+      if (v instanceof Node) dd.appendChild(v); else dd.textContent = v;
       dl.appendChild(dt); dl.appendChild(dd);
     };
     if (item && item.from && item.from !== 'Wm82.a4') add('Entered ID', item.query + ' (' + item.from + ')');
     add('ZH13 gene', g.zh || 'No matching ZH13 gene');
     add('Description', g.desc || 'No description');
+    var more = document.createElement('a');
+    more.href = '/analysis.html?genes=' + encodeURIComponent(g.gene);
+    more.textContent = 'GO, KEGG, Pfam, co-expressed genes and predicted function';
+    add('Gene analysis', more);
     var all = g.t;
     add('TPM range', Math.min.apply(null, all).toFixed(2) + ' to ' + Math.max.apply(null, all).toFixed(2) +
       ' across ' + all.length + ' samples');

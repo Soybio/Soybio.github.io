@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Functional annotation (GO, KEGG, Pfam) – Soybio</title>
+  <meta name="description" content="GO, KEGG and Pfam functional annotation of soybean Williams 82 (Wm82.a4) genes, used for enrichment analysis on Soybio.">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <span>
+          <span class="brand-name">Soybio</span>
+          <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/data.html" aria-current="page">Data</a></li>
+          <li><a href="/expression.html">Expression</a></li>
+          <li><a href="/analysis.html">Gene Analysis</a></li>
+          <li><a href="/reference.html">Reference Genes</a></li>
+          <li><a href="/converter.html">ID Converter</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/data.html">Data</a><span aria-hidden="true">/</span>Functional annotation</div>
+        <h1>Functional annotation (GO, KEGG, Pfam)</h1>
+        <p class="lead">Gene Ontology, KEGG pathway and Pfam domain annotation of soybean Williams 82 genes (Wm82.a4 gene IDs). These files are used by the <a href="/analysis.html">Gene Analysis</a> page.</p>
+      </div>
+    </section>
+
+    <div class="container content">
+      <h2>Summary</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Annotation</th><th scope="col" class="num">Annotated genes</th><th scope="col" class="num">Terms</th><th scope="col">Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>GO Biological Process</td><td class="num">20,832</td><td class="num">7,971</td><td rowspan="3">24,191 genes have at least one GO term. Parent terms are included for every gene.</td></tr>
+            <tr><td>GO Molecular Function</td><td class="num">17,998</td><td class="num">2,606</td></tr>
+            <tr><td>GO Cellular Component</td><td class="num">20,613</td><td class="num">1,246</td></tr>
+            <tr><td>KEGG pathways</td><td class="num">11,644</td><td class="num">135</td><td>2,252 KEGG orthology (KO) groups. 7 global maps (such as "Metabolic pathways") are not used in enrichment tests.</td></tr>
+            <tr><td>Pfam domains</td><td class="num">39,447</td><td class="num">4,183</td><td>Annotated on Wm82.a2.v1 gene models (45,533 genes) and converted to Wm82.a4 IDs with the <a href="/data/zh13-wm82a4/">gene ID table</a>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Downloads</h2>
+      <p>Click a file name to download it. No account is needed.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">File</th><th scope="col">Columns</th><th scope="col" class="num">Size</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="/data/annotation/Wm82a4_GO.tsv.gz" download>Wm82a4_GO.tsv.gz</a></td><td>Gene, GO, Level (namespace), Description</td><td class="num">10.5 MB</td></tr>
+            <tr><td><a href="/data/annotation/Wm82a4_KEGG.tsv.gz" download>Wm82a4_KEGG.tsv.gz</a></td><td>Gene, KO, Pathway, Description</td><td class="num">0.2 MB</td></tr>
+            <tr><td><a href="/data/annotation/Wm82a4_Pfam.tsv.gz" download>Wm82a4_Pfam.tsv.gz</a></td><td>Gene (Wm82.a4), Pfam</td><td class="num">0.3 MB</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Notes</h2>
+      <ul>
+        <li>Genes without any annotation of a type are not counted in enrichment tests for that type, so results are not biased by unannotated genes.</li>
+        <li>About 6,100 Pfam-annotated Wm82.a2.v1 genes have no matching Wm82.a4 gene in the gene ID table and are not included.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
+      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -108,6 +108,8 @@
     getJSON: getJSON,
     loadMeta: loadMeta,
     getGene: getGene,
+    loadIdmap: loadIdmap,
+    canonical: canonical,
     resolve: resolve,
     parseTokens: parseTokens
   };

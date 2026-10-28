@@ -13,3 +13,8 @@ desktop.ini
 
 # Raw data archives (too large for the website)
 *.zip
+
+# Raw annotation files (published copies are in data/annotation/)
+/Williams_82.GO.txt.gz
+/Williams_82.KEGG.txt.gz
+/Williams82.a2.v1.pfam.domain.txt

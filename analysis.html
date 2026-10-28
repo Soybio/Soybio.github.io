@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gene Analysis – Soybio</title>
+  <meta name="description" content="GO, KEGG and Pfam enrichment for soybean gene lists, stress-response enrichment, and single-gene analysis with co-expressed genes and function prediction.">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <span>
+          <span class="brand-name">Soybio</span>
+          <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/data.html">Data</a></li>
+          <li><a href="/expression.html">Expression</a></li>
+          <li><a href="/analysis.html" aria-current="page">Gene Analysis</a></li>
+          <li><a href="/reference.html">Reference Genes</a></li>
+          <li><a href="/converter.html">ID Converter</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Gene Analysis</div>
+        <h1>Gene Analysis</h1>
+        <p class="lead">Paste a list of genes for GO, KEGG and Pfam enrichment and a stress-response test. Paste one gene to see its annotation, stress response, co-expressed genes and a function prediction from co-expression.</p>
+      </div>
+    </section>
+
+    <div class="container content">
+      <form class="tool" id="analysis-form" autocomplete="off">
+        <label class="field-label" for="genes">Gene IDs</label>
+        <textarea id="genes" spellcheck="false" placeholder="One gene ID per line. Enter one gene for single-gene analysis, or 2 to 3,000 genes for enrichment analysis."></textarea>
+        <p class="small muted help">Wm82.a4, ZH13 and Wm82.a2.v1 gene IDs are accepted; ZH13 and Wm82.a2.v1 IDs are converted to Wm82.a4.</p>
+        <details class="bg-box">
+          <summary>Custom background (optional, for gene lists)</summary>
+          <p class="small muted">By default, the background is all genes that have the annotation being tested. If your list comes from a specific experiment, paste all genes detected in that experiment here for a more accurate test.</p>
+          <label class="field-label" for="background">Background gene IDs</label>
+          <textarea id="background" spellcheck="false" placeholder="Leave empty to use the whole genome"></textarea>
+        </details>
+        <div class="btn-row">
+          <button type="submit" class="btn" id="run" disabled>Analyse</button>
+          <button type="button" class="btn btn-outline" id="ex-single">Example: one gene</button>
+          <button type="button" class="btn btn-outline" id="ex-list">Example: gene list</button>
+          <button type="button" class="btn btn-outline" id="clear">Clear</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite">Loading…</p>
+      </form>
+
+      <div id="results" hidden>
+
+        <section id="list" hidden>
+          <h2>Gene list analysis</h2>
+          <p id="list-summary"></p>
+          <p class="note small" id="list-missing" hidden></p>
+          <p><a class="btn btn-outline btn-small" id="list-heatmap" href="/expression.html">Expression heatmap of these genes</a></p>
+
+          <div class="results-head">
+            <h3>Stress response</h3>
+            <button type="button" class="btn btn-small" id="stress-csv">Data (CSV)</button>
+          </div>
+          <p class="small muted">Are your genes more often salt-, drought- or heat-responsive than expected? Based on the 30 stress-versus-control comparisons of the <a href="/data/abiotic-rnaseq/">abiotic stress RNA-seq data</a>.</p>
+          <div class="table-wrap">
+            <table id="stress-table">
+              <thead>
+                <tr>
+                  <th scope="col">Stress</th>
+                  <th scope="col">Category</th>
+                  <th scope="col" class="num">Your genes</th>
+                  <th scope="col" class="num">Background</th>
+                  <th scope="col" class="num">Fold enrichment</th>
+                  <th scope="col" class="num">FDR</th>
+                  <th scope="col">Result</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="results-head">
+            <h3>Functional enrichment</h3>
+            <div class="btn-row">
+              <button type="button" class="btn btn-outline btn-small" id="dot-svg">SVG</button>
+              <button type="button" class="btn btn-outline btn-small" id="dot-png">PNG</button>
+              <button type="button" class="btn btn-small" id="enrich-csv">All terms (CSV)</button>
+            </div>
+          </div>
+          <div class="filters">
+            <div class="filter">
+              <span class="filter-label" id="source-label">Annotation</span>
+              <div class="segmented" id="source-filter" role="group" aria-labelledby="source-label">
+                <button type="button" data-source="go_bp" aria-pressed="true">GO Process</button>
+                <button type="button" data-source="go_mf" aria-pressed="false">GO Function</button>
+                <button type="button" data-source="go_cc" aria-pressed="false">GO Component</button>
+                <button type="button" data-source="kegg" aria-pressed="false">KEGG</button>
+                <button type="button" data-source="pfam" aria-pressed="false">Pfam</button>
+              </div>
+            </div>
+          </div>
+          <p id="enrich-summary"></p>
+          <div class="plot-box" id="dot-plot"></div>
+          <p class="muted" id="enrich-none" hidden>No terms have p &lt; 0.05 for this annotation.</p>
+          <div class="table-wrap">
+            <table id="enrich-table">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Term</th>
+                  <th scope="col" class="num">Your genes</th>
+                  <th scope="col" class="num">Background</th>
+                  <th scope="col" class="num">Fold</th>
+                  <th scope="col" class="num">p</th>
+                  <th scope="col" class="num">FDR</th>
+                  <th scope="col">Genes</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="small muted">Terms with p &lt; 0.05 are listed (up to 200); highlighted rows have FDR &lt; 0.05. The CSV file contains all tested terms.</p>
+        </section>
+
+        <section id="single" hidden>
+          <h2>Single gene analysis</h2>
+          <div id="gene-summary"></div>
+
+          <h3>Stress response</h3>
+          <div class="table-wrap">
+            <table id="response-table">
+              <thead>
+                <tr>
+                  <th scope="col">Stress</th>
+                  <th scope="col" class="num">Comparisons</th>
+                  <th scope="col" class="num">Up</th>
+                  <th scope="col" class="num">Down</th>
+                  <th scope="col">Summary</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <section id="predict">
+            <h3>Predicted function from co-expression</h3>
+            <p class="small muted">Genes that are switched on and off together often work in the same process. These GO terms, KEGG pathways and Pfam domains are over-represented among the 30 most co-expressed genes (FDR &lt; 0.05). This is a prediction, most useful for genes without annotation, and should be confirmed experimentally.</p>
+            <div class="panel" id="predict-body"></div>
+          </section>
+
+          <div class="results-head">
+            <h3>Co-expressed genes</h3>
+            <div class="btn-row">
+              <a class="btn btn-outline btn-small" id="partner-heatmap" href="/expression.html">Heatmap of these genes</a>
+              <button type="button" class="btn btn-small" id="partner-csv">Data (CSV)</button>
+            </div>
+          </div>
+          <p class="small muted">The 30 genes with the most similar expression pattern across the 192 stress RNA-seq samples (Pearson correlation of log2 TPM after removing differences between studies and tissues).</p>
+          <p class="muted" id="partners-none" hidden>This gene is expressed too low or changes too little in the RNA-seq data for a reliable co-expression analysis.</p>
+          <div class="table-wrap" id="partners-wrap">
+            <table id="partner-table">
+              <thead>
+                <tr>
+                  <th scope="col" class="num">Rank</th>
+                  <th scope="col">Gene</th>
+                  <th scope="col" class="num">Correlation (r)</th>
+                  <th scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <h3>GO annotation</h3>
+          <p class="small muted">Most specific terms first. Parent terms are included.</p>
+          <div id="gene-go"></div>
+        </section>
+      </div>
+
+      <h2>Methods</h2>
+      <ul>
+        <li><strong>Annotation:</strong> GO and KEGG annotations of Wm82.a4 genes; Pfam domains of Wm82.a2.v1 gene models, converted to Wm82.a4 IDs with the <a href="/data/zh13-wm82a4/">gene ID table</a>. Download the files on the <a href="/data/annotation/">annotation dataset page</a>.</li>
+        <li><strong>Enrichment test:</strong> one-sided hypergeometric test (over-representation) with Benjamini–Hochberg correction (FDR). Only genes with at least one annotation of the tested type are counted. Terms with fewer than 5 genes in the background, and KEGG global maps such as "Metabolic pathways", are not tested.</li>
+        <li><strong>Stress response:</strong> a gene is salt-, drought- or heat-responsive if it is differentially expressed (adjusted p &lt; 0.05 and |log2 fold change| ≥ 1) in at least one comparison of that stress. The background is all 52,673 genes in the RNA-seq data.</li>
+        <li><strong>Co-expression:</strong> genes with mean TPM ≥ 2. For each gene, log2(TPM + 1) values were centred within each study and tissue, so that the correlation reflects shared responses to stress treatments rather than tissue or study differences. 33,357 genes are included.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
+      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/genedata.js"></script>
+  <script src="/assets/js/export.js"></script>
+  <script src="/assets/js/analysis.js"></script>
+</body>
+</html>
