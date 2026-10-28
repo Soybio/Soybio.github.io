@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abiotic stress RNA-seq expression – Soybio</title>
+  <meta name="description" content="Gene expression (TPM and read counts) of soybean in 192 public RNA-seq samples from 14 studies of salt, drought and heat stress, with differential expression results.">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <span>
+          <span class="brand-name">Soybio</span>
+          <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/data.html" aria-current="page">Data</a></li>
+          <li><a href="/expression.html">Expression</a></li>
+          <li><a href="/converter.html">Gene ID Converter</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/data.html">Data</a><span aria-hidden="true">/</span>Abiotic stress RNA-seq expression</div>
+        <h1>Abiotic stress RNA-seq expression</h1>
+        <p class="lead">Gene expression of soybean in 192 public RNA-seq samples from 14 studies of salt, drought and heat stress, processed in one consistent way, with differential expression results for 30 stress-versus-control comparisons.</p>
+      </div>
+    </section>
+
+    <div class="container content">
+      <div class="with-aside">
+        <div class="main-col">
+
+          <h2 id="overview">Overview</h2>
+          <p>Raw reads of 192 samples were downloaded from NCBI SRA and processed with the same pipeline against the Williams 82 reference genome (Wm82.a4.v1). The dataset gives gene-level TPM values and read counts for every sample, and differential expression results for each stress treatment compared with its control in the same study.</p>
+          <dl class="facts">
+            <dt>Samples</dt>
+            <dd>192 (104 salt, 66 drought and 22 heat stress samples, including controls)</dd>
+            <dt>Studies</dt>
+            <dd>14 NCBI BioProjects</dd>
+            <dt>Tissues</dt>
+            <dd>Leaf, root, pods, and pooled leaf, root and stem</dd>
+            <dt>Genes</dt>
+            <dd>52,673 Wm82.a4.v1 genes</dd>
+            <dt>Comparisons</dt>
+            <dd>30 stress-versus-control comparisons</dd>
+            <dt>Responsive genes</dt>
+            <dd>41,973 genes are differentially expressed in at least one comparison</dd>
+            <dt>Version</dt>
+            <dd>1.0, October 2026</dd>
+          </dl>
+          <p>To plot genes without downloading files, use the <a href="/expression.html">Expression</a> page.</p>
+
+          <h2 id="studies">Studies</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">BioProject</th>
+                  <th scope="col">Stress</th>
+                  <th scope="col">Tissue</th>
+                  <th scope="col">Stage</th>
+                  <th scope="col">Treatment</th>
+                  <th scope="col">Duration</th>
+                  <th scope="col" class="num">Samples*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA551959" rel="noopener">PRJNA551959</a></td><td>Salt</td><td>Root</td><td>Seedling (second trifoliate)</td><td>100 mM</td><td class="nowrap">30 h</td><td class="num">3 + 3</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA285880" rel="noopener">PRJNA285880</a></td><td>Salt</td><td>Leaf</td><td>Seedling (first trifoliate)</td><td>100 mM</td><td>4 and 24 h</td><td class="num">4 + 4</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA432861" rel="noopener">PRJNA432861</a></td><td>Salt</td><td>Leaf, root</td><td>Seedling (first trifoliate)</td><td>154 mM</td><td>1, 2, 4, 24 and 48 h</td><td class="num">6 + 30</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1147616" rel="noopener">PRJNA1147616</a></td><td>Salt</td><td>Leaf, root</td><td>Seedling (first trifoliate)</td><td>300 mM</td><td>1, 6, 12 and 24 h</td><td class="num">12 + 12</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1092863" rel="noopener">PRJNA1092863</a></td><td>Salt</td><td>Root</td><td>Seedling (first trifoliate)</td><td>150 mM</td><td>2, 6, 12 and 24 h</td><td class="num">6 + 24</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1011551" rel="noopener">PRJNA1011551</a></td><td>Drought</td><td>Root</td><td>Seedling (third trifoliate)</td><td>15% PEG-6000</td><td class="nowrap">18 d</td><td class="num">6 + 6</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA852689" rel="noopener">PRJNA852689</a></td><td>Drought</td><td>Leaf</td><td>Early flowering</td><td>Soil water 24.3%, 20.6% and 16.9%</td><td>7, 17 and 27 d</td><td class="num">9 + 9</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA641330" rel="noopener">PRJNA641330</a></td><td>Drought</td><td>Root</td><td>Late vegetative</td><td>Water withheld</td><td class="nowrap">7 d</td><td class="num">3 + 3</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA574626" rel="noopener">PRJNA574626</a></td><td>Drought</td><td>Leaf, root</td><td>Seedling (first trifoliate)</td><td>Water withheld</td><td>5 and 6 d</td><td class="num">6 + 12</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA813355" rel="noopener">PRJNA813355</a></td><td>Drought</td><td>Leaf, root and stem</td><td>Seedling (third trifoliate)</td><td>Water withheld</td><td class="nowrap">6 d</td><td class="num">6 + 6</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA880914" rel="noopener">PRJNA880914</a></td><td>Heat</td><td>Pods</td><td>Early flowering</td><td>38 °C</td><td class="nowrap">8 h</td><td class="num">3 + 2</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA644602" rel="noopener">PRJNA644602</a></td><td>Heat</td><td>Leaf</td><td>Early flowering</td><td>38 °C</td><td class="nowrap">8 h</td><td class="num">3 + 3</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA399013" rel="noopener">PRJNA399013</a></td><td>Heat</td><td>Leaf</td><td>Seedling (third trifoliate)</td><td>40 °C</td><td>8 and 24 h</td><td class="num">0 + 7</td></tr>
+                <tr><td class="nowrap"><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA449574" rel="noopener">PRJNA449574</a></td><td>Heat</td><td>Leaf</td><td>Full bloom (R2)</td><td>38 °C</td><td class="nowrap">8 h</td><td class="num">0 + 4</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted">* Number of control + stress samples. PRJNA399013 and PRJNA449574 have no control samples in this dataset, so they are shown in the plots but are not part of the differential expression comparisons.</p>
+
+          <h2 id="downloads">Downloads</h2>
+          <p>Click a file name to download it. No account is needed. Files ending in <code>.gz</code> are compressed; most programs (R, Python, 7-Zip) open them directly.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">File</th>
+                  <th scope="col">Contents</th>
+                  <th scope="col" class="num">Size</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="/data/abiotic-rnaseq/abiotic_stress_TPM_matrix.tsv.gz" download>abiotic_stress_TPM_matrix.tsv.gz</a></td>
+                  <td>TPM values: 52,673 genes (rows) × 192 samples (columns)</td>
+                  <td class="num">26.5 MB</td>
+                </tr>
+                <tr>
+                  <td><a href="/data/abiotic-rnaseq/abiotic_stress_counts_matrix.tsv.gz" download>abiotic_stress_counts_matrix.tsv.gz</a></td>
+                  <td>Gene-level read counts, same layout (for differential expression analysis)</td>
+                  <td class="num">11.7 MB</td>
+                </tr>
+                <tr>
+                  <td><a href="/data/abiotic-rnaseq/abiotic_stress_sample_information.tsv" download>abiotic_stress_sample_information.tsv</a></td>
+                  <td>One row per sample: SRA run, BioProject, stress, treatment, tissue, stage, duration, intensity, reads and alignment rate</td>
+                  <td class="num">30 KB</td>
+                </tr>
+                <tr>
+                  <td><a href="/data/abiotic-rnaseq/abiotic_stress_DEGs.tsv.gz" download>abiotic_stress_DEGs.tsv.gz</a></td>
+                  <td>Differentially expressed genes in each comparison, with log2 fold change and adjusted p</td>
+                  <td class="num">3.6 MB</td>
+                </tr>
+                <tr>
+                  <td><a href="/data/abiotic-rnaseq/abiotic_stress_DEG_membership.tsv" download>abiotic_stress_DEG_membership.tsv</a></td>
+                  <td>For each responsive gene: whether it responds to drought, heat and/or salt</td>
+                  <td class="num">1.9 MB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted">The sample columns in the matrices are in the same order as the rows of the sample information file.</p>
+
+          <h2 id="processing">Processing</h2>
+          <ul>
+            <li><strong>Reference:</strong> Williams 82 genome assembly 4, annotation 1 (Wm82.a4.v1); 52,673 genes.</li>
+            <li><strong>Reads:</strong> reads were trimmed before alignment; the median alignment rate is 96.8%. The number of reads kept and the alignment rate of each sample are given in the sample information file.</li>
+            <li><strong>Expression:</strong> gene-level read counts and TPM values were calculated for every sample.</li>
+            <li><strong>Differential expression:</strong> each stress treatment was compared with the control samples of the same study and tissue. Genes with adjusted p &lt; 0.05 and |log2 fold change| ≥ 1 are called differentially expressed (up or down).</li>
+          </ul>
+
+          <h2 id="summary">Responsive genes</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Stress</th><th scope="col" class="num">Comparisons</th><th scope="col" class="num">Genes differentially expressed in at least one comparison</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Salt</td><td class="num">18</td><td class="num">38,663</td></tr>
+                <tr><td>Drought</td><td class="num">10</td><td class="num">32,034</td></tr>
+                <tr><td>Heat</td><td class="num">2</td><td class="num">3,255</td></tr>
+                <tr><td>All three stresses</td><td class="num">–</td><td class="num">2,685</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted">The salt and drought numbers are high because these stresses have many comparisons (time points, tissues and studies). A gene is counted if it responds in any one of them.</p>
+
+          <h2 id="notes">Notes on data quality</h2>
+          <ul>
+            <li>Seven samples have fewer than 10 million reads after trimming: four control samples of PRJNA852689 and three samples of PRJNA641330. Their values are less precise.</li>
+            <li>The samples of PRJNA641330 have low alignment rates (46% to 74%; all other samples are above 80%).</li>
+            <li>In PRJNA285880 and PRJNA1147616, the SRA records give several time points together (for example "1, 6, 12 and 24 h"), so these samples are shown as one group.</li>
+            <li>The samples of PRJNA813355 are described in SRA as leaf, root and stem; they are shown as one tissue group.</li>
+          </ul>
+
+          <h2 id="cite">How to cite</h2>
+          <p>If you use these data, please cite the original studies (BioProject accessions above) and this website:</p>
+          <div class="note">
+            <p>Soybio (2026). Abiotic stress RNA-seq expression of soybean, version 1.0. Available at https://soybio.github.io/data/abiotic-rnaseq/</p>
+          </div>
+
+          <h2 id="versions">Version history</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">Changes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1.0</td><td class="nowrap">October 2026</td><td>First release</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside>
+          <div class="panel">
+            <h2>Plot genes</h2>
+            <p class="small">Bar plots and heatmaps for your genes, without downloading files.</p>
+            <a class="btn" href="/expression.html">Open Expression page</a>
+          </div>
+          <div class="panel">
+            <h2>Download</h2>
+            <a class="btn btn-outline" href="/data/abiotic-rnaseq/abiotic_stress_TPM_matrix.tsv.gz" download>TPM matrix (26.5 MB)</a>
+            <a class="btn btn-outline" href="/data/abiotic-rnaseq/abiotic_stress_counts_matrix.tsv.gz" download>Read counts (11.7 MB)</a>
+            <a class="btn btn-outline" href="/data/abiotic-rnaseq/abiotic_stress_sample_information.tsv" download>Sample information</a>
+          </div>
+          <nav class="panel toc" aria-label="On this page">
+            <h2>On this page</h2>
+            <ul>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#studies">Studies</a></li>
+              <li><a href="#downloads">Downloads</a></li>
+              <li><a href="#processing">Processing</a></li>
+              <li><a href="#summary">Responsive genes</a></li>
+              <li><a href="#notes">Notes on data quality</a></li>
+              <li><a href="#cite">How to cite</a></li>
+              <li><a href="#versions">Version history</a></li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
+      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>

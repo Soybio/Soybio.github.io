@@ -10,3 +10,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Raw data archives (too large for the website)
+*.zip

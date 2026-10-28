@@ -1,0 +1,193 @@
+sample	SRA_run	BioProject	stress	treatment	tissue	stage	duration	intensity	condition_group	reads_after_trimming	alignment_rate_%
+Salt_CK_Rt_1959_R1	SRR9622344	PRJNA551959	Salt	Control	Root	Seedling (Second Trifoliate)	30 h	0 mM	Control, 30 h	22933372	97.02
+Salt_CK_Rt_1959_R2	SRR9622345	PRJNA551959	Salt	Control	Root	Seedling (Second Trifoliate)	30 h	0 mM	Control, 30 h	25441129	96.93
+Salt_CK_Rt_1959_R3	SRR9622346	PRJNA551959	Salt	Control	Root	Seedling (Second Trifoliate)	30 h	0 mM	Control, 30 h	23023729	97.21
+Salt_Salt_Rt_1959_R1	SRR9622347	PRJNA551959	Salt	Salt	Root	Seedling (Second Trifoliate)	30 h	100 mM	100 mM, 30 h	21185140	89.06
+Salt_Salt_Rt_1959_R2	SRR9622348	PRJNA551959	Salt	Salt	Root	Seedling (Second Trifoliate)	30 h	100 mM	100 mM, 30 h	26965011	94.57
+Salt_Salt_Rt_1959_R3	SRR9622349	PRJNA551959	Salt	Salt	Root	Seedling (Second Trifoliate)	30 h	100 mM	100 mM, 30 h	19626175	95.87
+Salt_CK_Lf_5880_R1	SRR2051082	PRJNA285880	Salt	Control	Leaf	Seedling (First Trifoliate)	4 and 24 h	0 mM	Control, 4 and 24 h	24330350	97.51
+Salt_CK_Lf_5880_R2	SRR2051083	PRJNA285880	Salt	Control	Leaf	Seedling (First Trifoliate)	4 and 24 h	0 mM	Control, 4 and 24 h	24330350	97.51
+Salt_CK_Lf_5880_R3	SRR2051084	PRJNA285880	Salt	Control	Leaf	Seedling (First Trifoliate)	4 and 24 h	0 mM	Control, 4 and 24 h	23339589	97.39
+Salt_CK_Lf_5880_R4	SRR2051085	PRJNA285880	Salt	Control	Leaf	Seedling (First Trifoliate)	4 and 24 h	0 mM	Control, 4 and 24 h	23339589	97.39
+Salt_Salt_Lf_5880_R1	SRR2051086	PRJNA285880	Salt	Salt	Leaf	Seedling (First Trifoliate)	4 and 24 h	100 mM	100 mM, 4 and 24 h	29396904	97.66
+Salt_Salt_Lf_5880_R2	SRR2051087	PRJNA285880	Salt	Salt	Leaf	Seedling (First Trifoliate)	4 and 24 h	100 mM	100 mM, 4 and 24 h	29396904	97.66
+Salt_Salt_Lf_5880_R3	SRR2051088	PRJNA285880	Salt	Salt	Leaf	Seedling (First Trifoliate)	4 and 24 h	100 mM	100 mM, 4 and 24 h	27718393	97.83
+Salt_Salt_Lf_5880_R4	SRR2051089	PRJNA285880	Salt	Salt	Leaf	Seedling (First Trifoliate)	4 and 24 h	100 mM	100 mM, 4 and 24 h	27718393	97.83
+Salt_CK_Lf_2861_R1	SRR6669457	PRJNA432861	Salt	Control	Leaf	Seedling (First Trifoliate)	0 h	0 mM	Control, 0 h	19674717	98.54
+Salt_CK_Lf_2861_R2	SRR6669458	PRJNA432861	Salt	Control	Leaf	Seedling (First Trifoliate)	0 h	0 mM	Control, 0 h	19256785	98.57
+Salt_CK_Lf_2861_R3	SRR6669459	PRJNA432861	Salt	Control	Leaf	Seedling (First Trifoliate)	0 h	0 mM	Control, 0 h	17690962	98.78
+Salt_Salt_Lf_2861_R1	SRR6669460	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	1 h	154 mM	154 mM, 1 h	15793357	98.68
+Salt_Salt_Lf_2861_R2	SRR6669453	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	1 h	154 mM	154 mM, 1 h	18686608	98.96
+Salt_Salt_Lf_2861_R3	SRR6669454	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	1 h	154 mM	154 mM, 1 h	21706519	98.9
+Salt_Salt_Lf_2861_R4	SRR6669455	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	2 h	154 mM	154 mM, 2 h	20771404	98.76
+Salt_Salt_Lf_2861_R5	SRR6669456	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	2 h	154 mM	154 mM, 2 h	19421276	98.58
+Salt_Salt_Lf_2861_R6	SRR6669461	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	2 h	154 mM	154 mM, 2 h	16921089	98.06
+Salt_Salt_Lf_2861_R7	SRR6669445	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	24 h	154 mM	154 mM, 24 h	18558745	98.71
+Salt_Salt_Lf_2861_R8	SRR6669446	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	24 h	154 mM	154 mM, 24 h	18057112	98.71
+Salt_Salt_Lf_2861_R9	SRR6669447	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	24 h	154 mM	154 mM, 24 h	19473168	98.48
+Salt_Salt_Lf_2861_R10	SRR6669462	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	4 h	154 mM	154 mM, 4 h	20410870	98.9
+Salt_Salt_Lf_2861_R11	SRR6669443	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	4 h	154 mM	154 mM, 4 h	17056823	98.73
+Salt_Salt_Lf_2861_R12	SRR6669444	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	4 h	154 mM	154 mM, 4 h	19347133	98.59
+Salt_Salt_Lf_2861_R13	SRR6669448	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	48 h	154 mM	154 mM, 48 h	20849880	98.62
+Salt_Salt_Lf_2861_R14	SRR6669449	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	48 h	154 mM	154 mM, 48 h	19873483	98.54
+Salt_Salt_Lf_2861_R15	SRR6669450	PRJNA432861	Salt	Salt	Leaf	Seedling (First Trifoliate)	48 h	154 mM	154 mM, 48 h	21678673	98.79
+Salt_CK_Rt_2861_R1	SRR6669451	PRJNA432861	Salt	Control	Root	Seedling (First Trifoliate)	0 h	0 mM	Control, 0 h	21474091	97.76
+Salt_CK_Rt_2861_R2	SRR6669452	PRJNA432861	Salt	Control	Root	Seedling (First Trifoliate)	0 h	0 mM	Control, 0 h	20133763	97.76
+Salt_CK_Rt_2861_R3	SRR6669470	PRJNA432861	Salt	Control	Root	Seedling (First Trifoliate)	0 h	0 mM	Control, 0 h	18704608	97.82
+Salt_Salt_Rt_2861_R1	SRR6669469	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	1 h	154 mM	154 mM, 1 h	20799130	97.91
+Salt_Salt_Rt_2861_R2	SRR6669472	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	1 h	154 mM	154 mM, 1 h	20943547	97.92
+Salt_Salt_Rt_2861_R3	SRR6669471	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	1 h	154 mM	154 mM, 1 h	20502517	97.87
+Salt_Salt_Rt_2861_R4	SRR6669466	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	2 h	154 mM	154 mM, 2 h	17900881	97.55
+Salt_Salt_Rt_2861_R5	SRR6669465	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	2 h	154 mM	154 mM, 2 h	22884438	97.73
+Salt_Salt_Rt_2861_R6	SRR6669468	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	2 h	154 mM	154 mM, 2 h	18595736	97.82
+Salt_Salt_Rt_2861_R7	SRR6669441	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	24 h	154 mM	154 mM, 24 h	20557793	97.54
+Salt_Salt_Rt_2861_R8	SRR6669442	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	24 h	154 mM	154 mM, 24 h	15739338	97.02
+Salt_Salt_Rt_2861_R9	SRR6669439	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	24 h	154 mM	154 mM, 24 h	21475377	96.8
+Salt_Salt_Rt_2861_R10	SRR6669467	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	4 h	154 mM	154 mM, 4 h	18851303	97.66
+Salt_Salt_Rt_2861_R11	SRR6669464	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	4 h	154 mM	154 mM, 4 h	18358488	97.36
+Salt_Salt_Rt_2861_R12	SRR6669463	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	4 h	154 mM	154 mM, 4 h	19973804	97.38
+Salt_Salt_Rt_2861_R13	SRR6669440	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	48 h	154 mM	154 mM, 48 h	19124174	96.73
+Salt_Salt_Rt_2861_R14	SRR6669437	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	48 h	154 mM	154 mM, 48 h	16739710	94.78
+Salt_Salt_Rt_2861_R15	SRR6669438	PRJNA432861	Salt	Salt	Root	Seedling (First Trifoliate)	48 h	154 mM	154 mM, 48 h	16596928	95.6
+Salt_CK_Lf_7616_R1	SRR30220851	PRJNA1147616	Salt	Control	Leaf	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	19926121	96.95
+Salt_CK_Lf_7616_R2	SRR30220850	PRJNA1147616	Salt	Control	Leaf	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	19957171	96.98
+Salt_CK_Lf_7616_R3	SRR30220849	PRJNA1147616	Salt	Control	Leaf	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	19734475	96.82
+Salt_Salt_Lf_7616_R1	SRR30220855	PRJNA1147616	Salt	Salt	Leaf	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	20020853	97.27
+Salt_Salt_Lf_7616_R2	SRR30220854	PRJNA1147616	Salt	Salt	Leaf	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	20287891	97.13
+Salt_Salt_Lf_7616_R3	SRR30220852	PRJNA1147616	Salt	Salt	Leaf	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	20913553	96.95
+Salt_CK_Rt_7616_R1	SRR30220858	PRJNA1147616	Salt	Control	Root	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	19210540	96.43
+Salt_CK_Rt_7616_R2	SRR30220857	PRJNA1147616	Salt	Control	Root	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	20273624	96.5
+Salt_CK_Rt_7616_R3	SRR30220856	PRJNA1147616	Salt	Control	Root	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	23785806	96.74
+Salt_Salt_Rt_7616_R1	SRR30220861	PRJNA1147616	Salt	Salt	Root	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	20077384	97.17
+Salt_Salt_Rt_7616_R2	SRR30220860	PRJNA1147616	Salt	Salt	Root	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	21126080	97.21
+Salt_Salt_Rt_7616_R3	SRR30220859	PRJNA1147616	Salt	Salt	Root	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	23431535	97.03
+Salt_CK_Lf_7616_R4	SRR30220842	PRJNA1147616	Salt	Control	Leaf	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	20564814	97.24
+Salt_CK_Lf_7616_R5	SRR30220863	PRJNA1147616	Salt	Control	Leaf	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	20255312	97.24
+Salt_CK_Lf_7616_R6	SRR30220862	PRJNA1147616	Salt	Control	Leaf	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	20266616	97.07
+Salt_Salt_Lf_7616_R4	SRR30220845	PRJNA1147616	Salt	Salt	Leaf	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	20124356	97.31
+Salt_Salt_Lf_7616_R5	SRR30220844	PRJNA1147616	Salt	Salt	Leaf	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	20326134	97.43
+Salt_Salt_Lf_7616_R6	SRR30220843	PRJNA1147616	Salt	Salt	Leaf	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	19433168	97.64
+Salt_CK_Rt_7616_R4	SRR30220848	PRJNA1147616	Salt	Control	Root	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	20022875	97.11
+Salt_CK_Rt_7616_R5	SRR30220847	PRJNA1147616	Salt	Control	Root	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	21641075	96.96
+Salt_CK_Rt_7616_R6	SRR30220846	PRJNA1147616	Salt	Control	Root	Seedling (First Trifoliate)	0 h	300 mM	Control, 0 h	20292192	96.69
+Salt_Salt_Rt_7616_R4	SRR30220865	PRJNA1147616	Salt	Salt	Root	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	20472387	96.9
+Salt_Salt_Rt_7616_R5	SRR30220864	PRJNA1147616	Salt	Salt	Root	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	20310155	96.82
+Salt_Salt_Rt_7616_R6	SRR30220853	PRJNA1147616	Salt	Salt	Root	Seedling (First Trifoliate)	1, 6, 12 and 24 h	300 mM	300 mM, 1, 6, 12 and 24 h	19117307	96.63
+Salt_CK_Rt_2863_R1	SRR28483893	PRJNA1092863	Salt	Control	Root	Seedling (First Trifoliate)	0 h	150 mM	Control, 0 h	22401880	91.79
+Salt_CK_Rt_2863_R2	SRR28483892	PRJNA1092863	Salt	Control	Root	Seedling (First Trifoliate)	0 h	150 mM	Control, 0 h	22256806	93.3
+Salt_CK_Rt_2863_R3	SRR28483881	PRJNA1092863	Salt	Control	Root	Seedling (First Trifoliate)	0 h	150 mM	Control, 0 h	22537038	92.93
+Salt_Salt_Rt_2863_R1	SRR28483870	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	2 h	150 mM	150 mM, 2 h	22551924	92.87
+Salt_Salt_Rt_2863_R2	SRR28483869	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	2 h	150 mM	150 mM, 2 h	22627688	93.12
+Salt_Salt_Rt_2863_R3	SRR28483868	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	2 h	150 mM	150 mM, 2 h	20406895	92.86
+Salt_Salt_Rt_2863_R4	SRR28483867	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	6 h	150 mM	150 mM, 6 h	20653456	93.08
+Salt_Salt_Rt_2863_R5	SRR28483866	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	6 h	150 mM	150 mM, 6 h	22325842	93.12
+Salt_Salt_Rt_2863_R6	SRR28483865	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	6 h	150 mM	150 mM, 6 h	22436704	92.39
+Salt_Salt_Rt_2863_R7	SRR28483864	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	12 h	150 mM	150 mM, 12 h	22554643	92.78
+Salt_Salt_Rt_2863_R8	SRR28483891	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	12 h	150 mM	150 mM, 12 h	22303965	91.54
+Salt_Salt_Rt_2863_R9	SRR28483890	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	12 h	150 mM	150 mM, 12 h	22032435	93.04
+Salt_Salt_Rt_2863_R10	SRR28483889	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	24 h	150 mM	150 mM, 24 h	22272343	93.19
+Salt_Salt_Rt_2863_R11	SRR28483888	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	24 h	150 mM	150 mM, 24 h	22611991	93.28
+Salt_Salt_Rt_2863_R12	SRR28483887	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	24 h	150 mM	150 mM, 24 h	22063165	92.54
+Salt_CK_Rt_2863_R4	SRR28483886	PRJNA1092863	Salt	Control	Root	Seedling (First Trifoliate)	0 h	150 mM	Control, 0 h	22489605	93.22
+Salt_CK_Rt_2863_R5	SRR28483885	PRJNA1092863	Salt	Control	Root	Seedling (First Trifoliate)	0 h	150 mM	Control, 0 h	21925854	93.12
+Salt_CK_Rt_2863_R6	SRR28483884	PRJNA1092863	Salt	Control	Root	Seedling (First Trifoliate)	0 h	150 mM	Control, 0 h	22514399	92.78
+Salt_Salt_Rt_2863_R13	SRR28483883	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	2 h	150 mM	150 mM, 2 h	22076098	93.87
+Salt_Salt_Rt_2863_R14	SRR28483882	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	2 h	150 mM	150 mM, 2 h	22271712	93.75
+Salt_Salt_Rt_2863_R15	SRR28483880	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	2 h	150 mM	150 mM, 2 h	22236434	92.5
+Salt_Salt_Rt_2863_R16	SRR28483879	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	6 h	150 mM	150 mM, 6 h	19105621	93.03
+Salt_Salt_Rt_2863_R17	SRR28483878	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	6 h	150 mM	150 mM, 6 h	22425196	92.64
+Salt_Salt_Rt_2863_R18	SRR28483877	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	6 h	150 mM	150 mM, 6 h	22611114	92.83
+Salt_Salt_Rt_2863_R19	SRR28483876	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	12 h	150 mM	150 mM, 12 h	22518515	93.13
+Salt_Salt_Rt_2863_R20	SRR28483875	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	12 h	150 mM	150 mM, 12 h	22515099	92.69
+Salt_Salt_Rt_2863_R21	SRR28483874	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	12 h	150 mM	150 mM, 12 h	22512341	93.43
+Salt_Salt_Rt_2863_R22	SRR28483873	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	24 h	150 mM	150 mM, 24 h	22022164	92.65
+Salt_Salt_Rt_2863_R23	SRR28483872	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	24 h	150 mM	150 mM, 24 h	22283936	93.16
+Salt_Salt_Rt_2863_R24	SRR28483871	PRJNA1092863	Salt	Salt	Root	Seedling (First Trifoliate)	24 h	150 mM	150 mM, 24 h	22622459	92.69
+Drt_CK_Rt_1551_R1	SRR25867181	PRJNA1011551	Drought	Control	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	Control, 18 d	32440700	97.49
+Drt_CK_Rt_1551_R2	SRR25867182	PRJNA1011551	Drought	Control	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	Control, 18 d	30951216	97.09
+Drt_CK_Rt_1551_R3	SRR25867178	PRJNA1011551	Drought	Control	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	Control, 18 d	33634165	97.39
+Drt_Drought_Rt_1551_R1	SRR25867177	PRJNA1011551	Drought	Drought	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	15% PEG-6000, 18 d	38363554	97.44
+Drt_Drought_Rt_1551_R2	SRR25867176	PRJNA1011551	Drought	Drought	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	15% PEG-6000, 18 d	36895736	97.56
+Drt_Drought_Rt_1551_R3	SRR25867175	PRJNA1011551	Drought	Drought	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	15% PEG-6000, 18 d	40566332	97.51
+Drt_CK_Rt_1551_R4	SRR25867174	PRJNA1011551	Drought	Control	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	Control, 18 d	39485230	97.1
+Drt_CK_Rt_1551_R5	SRR25867173	PRJNA1011551	Drought	Control	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	Control, 18 d	54827364	96.96
+Drt_CK_Rt_1551_R6	SRR25867172	PRJNA1011551	Drought	Control	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	Control, 18 d	47923963	96.3
+Drt_Drought_Rt_1551_R4	SRR25867171	PRJNA1011551	Drought	Drought	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	15% PEG-6000, 18 d	37524707	97.46
+Drt_Drought_Rt_1551_R5	SRR25867180	PRJNA1011551	Drought	Drought	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	15% PEG-6000, 18 d	29328834	97.48
+Drt_Drought_Rt_1551_R6	SRR25867179	PRJNA1011551	Drought	Drought	Root	Seedling (Third Trifoliate)	18 d	15% PEG-6000	15% PEG-6000, 18 d	33121786	97.5
+Drt_CK_Lf_2689_R1	SRR19849614	PRJNA852689	Drought	Control	Leaf	Early Flowering	7 d	soil water 30%	Control, 7 d	9099285	95.14
+Drt_CK_Lf_2689_R2	SRR19849617	PRJNA852689	Drought	Control	Leaf	Early Flowering	7 d	soil water 30%	Control, 7 d	20456750	95.42
+Drt_CK_Lf_2689_R3	SRR19849628	PRJNA852689	Drought	Control	Leaf	Early Flowering	7 d	soil water 30%	Control, 7 d	10818290	93.5
+Drt_CK_Lf_2689_R4	SRR19849613	PRJNA852689	Drought	Control	Leaf	Early Flowering	17 d	soil water 30%	Control, 17 d	2732719	95.66
+Drt_CK_Lf_2689_R5	SRR19849616	PRJNA852689	Drought	Control	Leaf	Early Flowering	17 d	soil water 30%	Control, 17 d	14778926	95.9
+Drt_CK_Lf_2689_R6	SRR19849627	PRJNA852689	Drought	Control	Leaf	Early Flowering	17 d	soil water 30%	Control, 17 d	21904514	95.87
+Drt_CK_Lf_2689_R7	SRR19849612	PRJNA852689	Drought	Control	Leaf	Early Flowering	27 d	soil water 30%	Control, 27 d	3263443	89.97
+Drt_CK_Lf_2689_R8	SRR19849615	PRJNA852689	Drought	Control	Leaf	Early Flowering	27 d	soil water 30%	Control, 27 d	8838986	89.52
+Drt_CK_Lf_2689_R9	SRR19849618	PRJNA852689	Drought	Control	Leaf	Early Flowering	27 d	soil water 30%	Control, 27 d	21459118	90.72
+Drt_Drought_Lf_2689_R1	SRR19849611	PRJNA852689	Drought	Drought	Leaf	Early Flowering	7 d	soil water 24.3%	soil water 24.3%, 7 d	21287762	94.81
+Drt_Drought_Lf_2689_R2	SRR19849625	PRJNA852689	Drought	Drought	Leaf	Early Flowering	7 d	soil water 24.3%	soil water 24.3%, 7 d	20388954	95.03
+Drt_Drought_Lf_2689_R3	SRR19849626	PRJNA852689	Drought	Drought	Leaf	Early Flowering	7 d	soil water 24.3%	soil water 24.3%, 7 d	22248609	95.54
+Drt_Drought_Lf_2689_R4	SRR19849622	PRJNA852689	Drought	Drought	Leaf	Early Flowering	17 d	soil water 20.6%	soil water 20.6%, 17 d	21713787	95.93
+Drt_Drought_Lf_2689_R5	SRR19849623	PRJNA852689	Drought	Drought	Leaf	Early Flowering	17 d	soil water 20.6%	soil water 20.6%, 17 d	18521041	96.05
+Drt_Drought_Lf_2689_R6	SRR19849624	PRJNA852689	Drought	Drought	Leaf	Early Flowering	17 d	soil water 20.6%	soil water 20.6%, 17 d	10362291	96.01
+Drt_Drought_Lf_2689_R7	SRR19849619	PRJNA852689	Drought	Drought	Leaf	Early Flowering	27 d	soil water 16.9%	soil water 16.9%, 27 d	22529863	93.26
+Drt_Drought_Lf_2689_R8	SRR19849620	PRJNA852689	Drought	Drought	Leaf	Early Flowering	27 d	soil water 16.9%	soil water 16.9%, 27 d	20381192	93.32
+Drt_Drought_Lf_2689_R9	SRR19849621	PRJNA852689	Drought	Drought	Leaf	Early Flowering	27 d	soil water 16.9%	soil water 16.9%, 27 d	22204342	92.5
+Drt_CK_Rt_1330_R1	SRR12074574	PRJNA641330	Drought	Control	Root	Late Vegetative	7 d	normal watering	Control, 7 d	9782890	63.95
+Drt_CK_Rt_1330_R2	SRR12074577	PRJNA641330	Drought	Control	Root	Late Vegetative	7 d	normal watering	Control, 7 d	10436356	73.94
+Drt_CK_Rt_1330_R3	SRR12074578	PRJNA641330	Drought	Control	Root	Late Vegetative	7 d	normal watering	Control, 7 d	11855238	72.06
+Drt_Drought_Rt_1330_R1	SRR12074571	PRJNA641330	Drought	Drought	Root	Late Vegetative	7 d	water withheld	water withheld, 7 d	9898537	49.61
+Drt_Drought_Rt_1330_R2	SRR12074572	PRJNA641330	Drought	Drought	Root	Late Vegetative	7 d	water withheld	water withheld, 7 d	11204552	45.91
+Drt_Drought_Rt_1330_R3	SRR12074573	PRJNA641330	Drought	Drought	Root	Late Vegetative	7 d	water withheld	water withheld, 7 d	9824623	48.26
+Drt_CK_Lf_4626_R1	SRR10202475	PRJNA574626	Drought	Control	Leaf	Seedling (First Trifoliate)	5 d	normal watering	Control, 5 d	34096086	87.36
+Drt_CK_Lf_4626_R2	SRR10202476	PRJNA574626	Drought	Control	Leaf	Seedling (First Trifoliate)	5 d	normal watering	Control, 5 d	32232936	87.08
+Drt_CK_Lf_4626_R3	SRR10202477	PRJNA574626	Drought	Control	Leaf	Seedling (First Trifoliate)	5 d	normal watering	Control, 5 d	31920794	87.21
+Drt_Drought_Lf_4626_R1	SRR10202472	PRJNA574626	Drought	Drought	Leaf	Seedling (First Trifoliate)	5 d	water withheld	water withheld, 5 d	31623570	85.53
+Drt_Drought_Lf_4626_R2	SRR10202473	PRJNA574626	Drought	Drought	Leaf	Seedling (First Trifoliate)	5 d	water withheld	water withheld, 5 d	31626652	89.09
+Drt_Drought_Lf_4626_R3	SRR10202474	PRJNA574626	Drought	Drought	Leaf	Seedling (First Trifoliate)	5 d	water withheld	water withheld, 5 d	35440061	83.24
+Drt_Drought_Lf_4626_R4	SRR10202469	PRJNA574626	Drought	Drought	Leaf	Seedling (First Trifoliate)	6 d	water withheld	water withheld, 6 d	29054365	87.62
+Drt_Drought_Lf_4626_R5	SRR10202470	PRJNA574626	Drought	Drought	Leaf	Seedling (First Trifoliate)	6 d	water withheld	water withheld, 6 d	32111233	89.55
+Drt_Drought_Lf_4626_R6	SRR10202471	PRJNA574626	Drought	Drought	Leaf	Seedling (First Trifoliate)	6 d	water withheld	water withheld, 6 d	40609811	84.99
+Drt_CK_Rt_4626_R1	SRR10202512	PRJNA574626	Drought	Control	Root	Seedling (First Trifoliate)	5 d	normal watering	Control, 5 d	20235989	87.99
+Drt_CK_Rt_4626_R2	SRR10202513	PRJNA574626	Drought	Control	Root	Seedling (First Trifoliate)	5 d	normal watering	Control, 5 d	22091929	89.14
+Drt_CK_Rt_4626_R3	SRR10202514	PRJNA574626	Drought	Control	Root	Seedling (First Trifoliate)	5 d	normal watering	Control, 5 d	22368120	87.03
+Drt_Drought_Rt_4626_R1	SRR10202509	PRJNA574626	Drought	Drought	Root	Seedling (First Trifoliate)	5 d	water withheld	water withheld, 5 d	21437325	96.12
+Drt_Drought_Rt_4626_R2	SRR10202510	PRJNA574626	Drought	Drought	Root	Seedling (First Trifoliate)	5 d	water withheld	water withheld, 5 d	26029844	85.47
+Drt_Drought_Rt_4626_R3	SRR10202511	PRJNA574626	Drought	Drought	Root	Seedling (First Trifoliate)	5 d	water withheld	water withheld, 5 d	22909105	87.06
+Drt_Drought_Rt_4626_R4	SRR10202505	PRJNA574626	Drought	Drought	Root	Seedling (First Trifoliate)	6 d	water withheld	water withheld, 6 d	26209403	95.49
+Drt_Drought_Rt_4626_R5	SRR10202507	PRJNA574626	Drought	Drought	Root	Seedling (First Trifoliate)	6 d	water withheld	water withheld, 6 d	24887294	96.2
+Drt_Drought_Rt_4626_R6	SRR10202508	PRJNA574626	Drought	Drought	Root	Seedling (First Trifoliate)	6 d	water withheld	water withheld, 6 d	32176607	93.86
+Drt_CK_Rt_3355_R1	SRR18251442	PRJNA813355	Drought	Control	Leaf, root and stem	Seedling (Third Trifoliate)	0 d	normal watering	Control, 0 d	23717757	97.2
+Drt_CK_Rt_3355_R2	SRR18251443	PRJNA813355	Drought	Control	Leaf, root and stem	Seedling (Third Trifoliate)	0 d	normal watering	Control, 0 d	23672744	97.28
+Drt_CK_Rt_3355_R3	SRR18251441	PRJNA813355	Drought	Control	Leaf, root and stem	Seedling (Third Trifoliate)	0 d	normal watering	Control, 0 d	23751158	97.61
+Drt_Drought_Rt_3355_R1	SRR18251444	PRJNA813355	Drought	Drought	Leaf, root and stem	Seedling (Third Trifoliate)	6 d	water withheld	water withheld, 6 d	23550932	97.8
+Drt_Drought_Rt_3355_R2	SRR18251447	PRJNA813355	Drought	Drought	Leaf, root and stem	Seedling (Third Trifoliate)	6 d	water withheld	water withheld, 6 d	23741791	97.72
+Drt_Drought_Rt_3355_R3	SRR18251448	PRJNA813355	Drought	Drought	Leaf, root and stem	Seedling (Third Trifoliate)	6 d	water withheld	water withheld, 6 d	23674582	97.83
+Drt_CK_Rt_3355_R4	SRR18251445	PRJNA813355	Drought	Control	Leaf, root and stem	Seedling (Third Trifoliate)	0 d	normal watering	Control, 0 d	23700446	97.27
+Drt_CK_Rt_3355_R5	SRR18251446	PRJNA813355	Drought	Control	Leaf, root and stem	Seedling (Third Trifoliate)	0 d	normal watering	Control, 0 d	23585565	97.38
+Drt_CK_Rt_3355_R6	SRR18251437	PRJNA813355	Drought	Control	Leaf, root and stem	Seedling (Third Trifoliate)	0 d	normal watering	Control, 0 d	23697561	97.46
+Drt_Drought_Rt_3355_R4	SRR18251438	PRJNA813355	Drought	Drought	Leaf, root and stem	Seedling (Third Trifoliate)	6 d	water withheld	water withheld, 6 d	23761758	97.83
+Drt_Drought_Rt_3355_R5	SRR18251439	PRJNA813355	Drought	Drought	Leaf, root and stem	Seedling (Third Trifoliate)	6 d	water withheld	water withheld, 6 d	23738142	97.95
+Drt_Drought_Rt_3355_R6	SRR18251440	PRJNA813355	Drought	Drought	Leaf, root and stem	Seedling (Third Trifoliate)	6 d	water withheld	water withheld, 6 d	23771726	97.32
+Heat_Heat_Pd_0914_R1	SRR21595198	PRJNA880914	Heat	Heat	Pods	Early Flowering	8 h	38 °C	38 °C, 8 h	20976057	96.68
+Heat_Heat_Pd_0914_R2	SRR21595199	PRJNA880914	Heat	Heat	Pods	Early Flowering	8 h	38 °C	38 °C, 8 h	19528700	97.01
+Heat_CK_Pd_0914_R1	SRR21595204	PRJNA880914	Heat	Control	Pods	Early Flowering	8 h	28 °C	Control, 8 h	24359368	97.24
+Heat_CK_Pd_0914_R2	SRR21595205	PRJNA880914	Heat	Control	Pods	Early Flowering	8 h	28 °C	Control, 8 h	21755470	97.24
+Heat_CK_Pd_0914_R3	SRR21595206	PRJNA880914	Heat	Control	Pods	Early Flowering	8 h	28 °C	Control, 8 h	29829323	97.15
+Heat_CK_Lf_4602_R1	SRR12164947	PRJNA644602	Heat	Control	Leaf	Early Flowering	8 h	38 °C	Control, 8 h	43907233	97.76
+Heat_CK_Lf_4602_R2	SRR12164948	PRJNA644602	Heat	Control	Leaf	Early Flowering	8 h	38 °C	Control, 8 h	50096600	98.2
+Heat_CK_Lf_4602_R3	SRR12164949	PRJNA644602	Heat	Control	Leaf	Early Flowering	8 h	38 °C	Control, 8 h	43483166	97.29
+Heat_Heat_Lf_4602_R1	SRR12164953	PRJNA644602	Heat	Heat	Leaf	Early Flowering	8 h	38 °C	38 °C, 8 h	35334686	93.32
+Heat_Heat_Lf_4602_R2	SRR12164954	PRJNA644602	Heat	Heat	Leaf	Early Flowering	8 h	38 °C	38 °C, 8 h	41782619	95.42
+Heat_Heat_Lf_4602_R3	SRR12164955	PRJNA644602	Heat	Heat	Leaf	Early Flowering	8 h	38 °C	38 °C, 8 h	46178772	98.35
+Heat_Heat_Lf_9013_R1	SRR5947142	PRJNA399013	Heat	Heat	Leaf	Seedling (Third Trifoliate)	8 h	40 °C	40 °C, 8 h	24074820	95.92
+Heat_Heat_Lf_9013_R2	SRR5947143	PRJNA399013	Heat	Heat	Leaf	Seedling (Third Trifoliate)	8 h	40 °C	40 °C, 8 h	24083448	96.23
+Heat_Heat_Lf_9013_R3	SRR5947144	PRJNA399013	Heat	Heat	Leaf	Seedling (Third Trifoliate)	8 h	40 °C	40 °C, 8 h	24069356	95.73
+Heat_Heat_Lf_9013_R4	SRR5947145	PRJNA399013	Heat	Heat	Leaf	Seedling (Third Trifoliate)	24 h	40 °C	40 °C, 24 h	24058727	94.31
+Heat_Heat_Lf_9013_R5	SRR5947146	PRJNA399013	Heat	Heat	Leaf	Seedling (Third Trifoliate)	24 h	40 °C	40 °C, 24 h	24069976	95.4
+Heat_Heat_Lf_9013_R6	SRR5947147	PRJNA399013	Heat	Heat	Leaf	Seedling (Third Trifoliate)	24 h	40 °C	40 °C, 24 h	24063748	95.43
+Heat_Heat_Lf_9013_R7	SRR5957117	PRJNA399013	Heat	Heat	Leaf	Seedling (Third Trifoliate)	24 h	40 °C	40 °C, 24 h	24031894	94.85
+Heat_Heat_Lf_9574_R1	SRR6983150	PRJNA449574	Heat	Heat	Leaf	Full bloom (R2)	8 h	38 °C	38 °C, 8 h	27265361	98.14
+Heat_Heat_Lf_9574_R2	SRR6983157	PRJNA449574	Heat	Heat	Leaf	Full bloom (R2)	8 h	38 °C	38 °C, 8 h	36151811	98.51
+Heat_Heat_Lf_9574_R3	SRR6983159	PRJNA449574	Heat	Heat	Leaf	Full bloom (R2)	8 h	38 °C	38 °C, 8 h	23593540	98.43
+Heat_Heat_Lf_9574_R4	SRR6983160	PRJNA449574	Heat	Heat	Leaf	Full bloom (R2)	8 h	38 °C	38 °C, 8 h	30492843	98.5

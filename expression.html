@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expression – Soybio</title>
+  <meta name="description" content="Expression of soybean genes under salt, drought and heat stress in 192 public RNA-seq samples. Bar plots for single genes and heatmaps for gene lists.">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <span>
+          <span class="brand-name">Soybio</span>
+          <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/data.html">Data</a></li>
+          <li><a href="/expression.html" aria-current="page">Expression</a></li>
+          <li><a href="/converter.html">Gene ID Converter</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Expression</div>
+        <h1>Gene Expression under Abiotic Stress</h1>
+        <p class="lead">Expression (TPM) of soybean genes in 192 public RNA-seq samples from 14 studies of salt, drought and heat stress. Enter one gene to see a bar plot, or several genes to see a heatmap.</p>
+      </div>
+    </section>
+
+    <div class="container content">
+      <form class="tool" id="expr-form" autocomplete="off">
+        <label class="field-label" for="genes">Gene IDs</label>
+        <textarea id="genes" name="genes" spellcheck="false" placeholder="One gene ID per line, for example:&#10;Glyma.10G145300&#10;SoyZH13_01G000024"></textarea>
+        <p class="small muted help">Wm82.a4, ZH13 and Wm82.a2.v1 gene IDs are accepted; ZH13 and Wm82.a2.v1 IDs are converted to Wm82.a4 automatically. Enter one gene for a bar plot, or 2 to 200 genes for a heatmap.</p>
+
+        <div class="filters">
+          <div class="filter">
+            <span class="filter-label" id="stress-label">Stress</span>
+            <div class="segmented" id="stress-filter" role="group" aria-labelledby="stress-label">
+              <button type="button" data-stress="All" aria-pressed="true">All</button>
+              <button type="button" data-stress="Salt" aria-pressed="false">Salt</button>
+              <button type="button" data-stress="Drought" aria-pressed="false">Drought</button>
+              <button type="button" data-stress="Heat" aria-pressed="false">Heat</button>
+            </div>
+          </div>
+          <div class="filter">
+            <label class="filter-label" for="tissue-filter">Tissue</label>
+            <select id="tissue-filter">
+              <option value="All">All tissues</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button type="submit" class="btn" id="plot" disabled>Plot</button>
+          <button type="button" class="btn btn-outline" id="ex-single">Example: one gene</button>
+          <button type="button" class="btn btn-outline" id="ex-multi">Example: 30 genes</button>
+          <button type="button" class="btn btn-outline" id="clear">Clear</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite">Loading…</p>
+      </form>
+
+      <div id="results" hidden>
+        <p class="note small" id="missing" hidden></p>
+
+        <section id="multi" hidden>
+          <div class="results-head">
+            <h2>Heatmap</h2>
+            <div class="btn-row">
+              <button type="button" class="btn btn-outline btn-small" id="hm-svg">SVG</button>
+              <button type="button" class="btn btn-outline btn-small" id="hm-png">PNG</button>
+              <button type="button" class="btn btn-small" id="hm-csv">Data (CSV)</button>
+            </div>
+          </div>
+          <div class="plot-options">
+            <fieldset>
+              <legend>Values</legend>
+              <label><input type="radio" name="hm-values" value="z" checked> Z-score per gene</label>
+              <label><input type="radio" name="hm-values" value="log"> log2(TPM + 1)</label>
+              <label><input type="radio" name="hm-values" value="tpm"> TPM</label>
+            </fieldset>
+            <fieldset>
+              <legend>Columns</legend>
+              <label><input type="radio" name="hm-cols" value="groups" checked> Conditions (mean)</label>
+              <label><input type="radio" name="hm-cols" value="samples"> All samples</label>
+            </fieldset>
+            <fieldset>
+              <legend>Gene order</legend>
+              <label><input type="radio" name="hm-order" value="cluster" checked> Clustered</label>
+              <label><input type="radio" name="hm-order" value="input"> As entered</label>
+            </fieldset>
+          </div>
+          <div class="plot-box" id="heatmap"></div>
+        </section>
+
+        <section id="single" hidden>
+          <div class="results-head">
+            <h2>Single gene</h2>
+            <div class="btn-row">
+              <button type="button" class="btn btn-outline btn-small" id="bar-svg">SVG</button>
+              <button type="button" class="btn btn-outline btn-small" id="bar-png">PNG</button>
+              <button type="button" class="btn btn-small" id="bar-csv">Data (CSV)</button>
+            </div>
+          </div>
+          <div id="gene-info"></div>
+          <div class="plot-options">
+            <fieldset>
+              <legend>Scale</legend>
+              <label><input type="radio" name="bar-scale" value="tpm" checked> TPM</label>
+              <label><input type="radio" name="bar-scale" value="log"> log2(TPM + 1)</label>
+            </fieldset>
+          </div>
+          <div class="plot-box" id="bar-plot"></div>
+
+          <h3>Differential expression</h3>
+          <p id="de-summary"></p>
+          <div class="table-wrap">
+            <table id="de-table">
+              <thead>
+                <tr>
+                  <th scope="col">Stress</th>
+                  <th scope="col">Study</th>
+                  <th scope="col">Condition</th>
+                  <th scope="col" class="num">log2 fold change</th>
+                  <th scope="col" class="num">Adjusted p</th>
+                  <th scope="col">Result</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="small muted">Each comparison is stress versus the matching control in the same study. Up or Down means adjusted p &lt; 0.05 and |log2 fold change| ≥ 1. "Not tested" means the gene was filtered out before testing in that study (usually because of low counts).</p>
+        </section>
+      </div>
+
+      <h2>About the data</h2>
+      <ul>
+        <li>The data are 192 public RNA-seq samples from 14 NCBI BioProjects: 104 salt, 66 drought and 22 heat stress samples, including their controls. Leaf, root and pod tissues are included.</li>
+        <li>All samples were processed in the same way against the Williams 82 reference genome (Wm82.a4.v1). Expression is given as TPM (transcripts per million).</li>
+        <li>In bar plots, each bar is the mean of the biological replicates and the error bar is the standard deviation. Dots are individual samples.</li>
+        <li>In heatmaps, "Z-score per gene" scales each gene to mean 0 and standard deviation 1 across the shown columns, which makes patterns easy to compare between genes.</li>
+        <li>Full details, the list of studies and the download files are on the <a href="/data/abiotic-rnaseq/">dataset page</a>.</li>
+      </ul>
+    </div>
+  </main>
+
+  <div class="plot-tooltip" id="plot-tooltip" hidden></div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
+      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/expression.js"></script>
+</body>
+</html>

@@ -782,6 +782,139 @@ tfoot td {
   min-width: 220px;
 }
 
+/* ---------- Expression browser ---------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin: 1rem 0 1.2rem;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.filter-label {
+  font-weight: 600;
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--brand);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.segmented button {
+  font: inherit;
+  font-size: 0.92rem;
+  padding: 0.32rem 0.85rem;
+  border: 0;
+  border-left: 1px solid var(--brand);
+  background: #fff;
+  color: var(--brand);
+  cursor: pointer;
+}
+
+.segmented button:first-child {
+  border-left: 0;
+}
+
+.segmented button[aria-pressed="true"] {
+  background: var(--brand);
+  color: #fff;
+}
+
+.segmented button:focus-visible,
+.filter select:focus-visible,
+.plot-options input:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.filter select {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #b9c2bd;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text);
+}
+
+.plot-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 2.2rem;
+  margin: 0 0 0.9rem;
+}
+
+.plot-options fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.plot-options legend {
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0;
+  margin-bottom: 0.2rem;
+}
+
+.plot-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-right: 1rem;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.plot-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  overflow-x: auto;
+  margin-bottom: 1.4rem;
+}
+
+.plot-box svg {
+  display: block;
+}
+
+.plot-tooltip {
+  position: fixed;
+  z-index: 20;
+  max-width: 320px;
+  padding: 0.45rem 0.65rem;
+  background: #1f2328;
+  color: #fff;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+#gene-info h3 {
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+}
+
+.badge-up {
+  background: #fbe3e1;
+  color: #8f2a22;
+}
+
+.badge-down {
+  background: #e0ecf7;
+  color: #1f4f7a;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {

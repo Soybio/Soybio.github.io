@@ -24,6 +24,7 @@
         <ul>
           <li><a href="/" aria-current="page">Home</a></li>
           <li><a href="/data.html">Data</a></li>
+          <li><a href="/expression.html">Expression</a></li>
           <li><a href="/converter.html">Gene ID Converter</a></li>
           <li><a href="/resources.html">Resources</a></li>
           <li><a href="/about.html">About</a></li>
@@ -39,17 +40,17 @@
           <h1>Soybean Bioinformatics and Genomics</h1>
           <p class="lead">This website provides data, tools and resources for soybean genome research. All files are free to download, and no account is needed.</p>
           <div class="btn-row">
-            <a class="btn" href="/converter.html">Convert gene IDs</a>
+            <a class="btn" href="/expression.html">Plot gene expression</a>
+            <a class="btn btn-outline" href="/converter.html">Convert gene IDs</a>
             <a class="btn btn-outline" href="/data.html">Download data</a>
           </div>
         </div>
         <div class="glance">
           <h2>Current data</h2>
           <dl>
-            <div><dt>ZH13 genes</dt><dd>55,443</dd></div>
-            <div><dt>Wm82.a4 genes</dt><dd>52,872</dd></div>
-            <div><dt>One-to-one gene pairs</dt><dd>43,348</dd></div>
-            <div><dt>High-confidence pairs</dt><dd>42,560</dd></div>
+            <div><dt>RNA-seq samples (salt, drought, heat)</dt><dd>192</dd></div>
+            <div><dt>Genes with expression data</dt><dd>52,673</dd></div>
+            <div><dt>ZH13 to Wm82.a4 gene pairs</dt><dd>43,348</dd></div>
             <div><dt>Last updated</dt><dd>October 2026</dd></div>
           </dl>
         </div>
@@ -60,8 +61,13 @@
       <h2>On this website</h2>
       <div class="cards">
         <div class="card">
+          <h3>Expression</h3>
+          <p>Bar plots and heatmaps of gene expression under salt, drought and heat stress, from 192 public RNA-seq samples.</p>
+          <a class="card-link" href="/expression.html">Plot gene expression</a>
+        </div>
+        <div class="card">
           <h3>Data</h3>
-          <p>Gene ID conversion tables and other soybean datasets. Files are provided in Excel and plain text (TSV) format.</p>
+          <p>Expression matrices, gene ID conversion tables and other soybean datasets, free to download.</p>
           <a class="card-link" href="/data.html">Browse data</a>
         </div>
         <div class="card">
@@ -76,7 +82,14 @@
         </div>
       </div>
 
-      <h2>Featured dataset</h2>
+      <h2>Datasets</h2>
+      <h3>Abiotic stress RNA-seq expression</h3>
+      <p>Expression of 52,673 soybean genes in 192 public RNA-seq samples from 14 studies of salt, drought and heat stress, all processed in the same way against the Wm82.a4 reference. Includes differential expression results for 30 stress-versus-control comparisons.</p>
+      <div class="btn-row">
+        <a class="btn btn-outline" href="/expression.html">Plot genes</a>
+        <a class="btn btn-outline" href="/data/abiotic-rnaseq/">Dataset details and downloads</a>
+      </div>
+
       <h3>ZH13 to Wm82.a4 gene ID conversion</h3>
       <p>A one-to-one gene ID table between the soybean genomes Zhonghuang 13 (ZH13) and Williams 82 assembly 4 (Wm82.a4). Each gene pair has a confidence level (High, Medium or No correspondence) and a short note on the evidence. Wm82.a2.v1 gene IDs are also given.</p>
       <div class="btn-row">
@@ -89,6 +102,7 @@
 
       <h2>Updates</h2>
       <ul class="updates">
+        <li><time datetime="2026-10-28">28 October 2026</time><span>Added the abiotic stress RNA-seq expression data and the Expression page with bar plots and heatmaps.</span></li>
         <li><time datetime="2026-10-27">27 October 2026</time><span>Website launched with the ZH13 to Wm82.a4 gene ID conversion table and the online Gene ID Converter.</span></li>
       </ul>
     </div>
