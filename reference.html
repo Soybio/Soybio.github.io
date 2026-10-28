@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reference Genes – Soybio</title>
+  <meta name="description" content="Find soybean genes with stable expression under salt, drought and heat stress for qRT-PCR normalisation, and check the stability of your own reference genes, based on 192 RNA-seq samples.">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <span>
+          <span class="brand-name">Soybio</span>
+          <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/data.html">Data</a></li>
+          <li><a href="/expression.html">Expression</a></li>
+          <li><a href="/reference.html" aria-current="page">Reference Genes</a></li>
+          <li><a href="/converter.html">Gene ID Converter</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Reference Genes</div>
+        <h1>qPCR Reference Gene Finder</h1>
+        <p class="lead">Find soybean genes with stable expression under salt, drought and heat stress for normalising qRT-PCR, and check how stable your own reference genes are. Based on 192 RNA-seq samples from 14 studies.</p>
+      </div>
+    </section>
+
+    <div class="container content">
+      <div class="tool">
+        <div class="filters">
+          <div class="filter">
+            <span class="filter-label" id="ref-stress-label">Stress</span>
+            <div class="segmented" id="ref-stress" role="group" aria-labelledby="ref-stress-label">
+              <button type="button" data-stress="All" aria-pressed="true">All</button>
+              <button type="button" data-stress="Salt" aria-pressed="false">Salt</button>
+              <button type="button" data-stress="Drought" aria-pressed="false">Drought</button>
+              <button type="button" data-stress="Heat" aria-pressed="false">Heat</button>
+            </div>
+          </div>
+          <div class="filter">
+            <label class="filter-label" for="ref-tissue">Tissue</label>
+            <select id="ref-tissue">
+              <option value="All">All tissues</option>
+              <option value="Leaf">Leaf</option>
+              <option value="Root">Root</option>
+            </select>
+          </div>
+          <div class="filter">
+            <label class="filter-label" for="ref-min">Expression</label>
+            <select id="ref-min">
+              <option value="10">Mean TPM ≥ 10</option>
+              <option value="30">Mean TPM ≥ 30</option>
+              <option value="100">Mean TPM ≥ 100</option>
+            </select>
+          </div>
+        </div>
+        <p class="small muted help">Choose the conditions of your own experiment. The ranking and the check below both use the selected samples.</p>
+      </div>
+
+      <div class="results-head">
+        <h2>Most stable genes</h2>
+        <button type="button" class="btn btn-small" id="top-csv">Download list (CSV)</button>
+      </div>
+      <p id="top-summary">Loading…</p>
+      <div class="table-wrap" id="top-wrap">
+        <table id="top-table">
+          <thead>
+            <tr>
+              <th scope="col" class="num">Rank</th>
+              <th scope="col">Gene</th>
+              <th scope="col">Description</th>
+              <th scope="col" class="num">Mean TPM</th>
+              <th scope="col" class="num">CV (%)</th>
+              <th scope="col" class="num">SD of log2 TPM</th>
+              <th scope="col" class="num">Max fold change</th>
+              <th scope="col" class="num">DE in comparisons</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="small muted" id="top-count"></p>
+      <p><button type="button" class="btn btn-outline btn-small" id="top-more" hidden>Show 25 more</button></p>
+
+      <h2 id="check">Check your reference genes</h2>
+      <p>Enter the genes you use (or plan to use) as references, for example actin, tubulin or EF1α genes. The table shows how stable they are in the selected conditions. Enter 3 or more genes to also get geNorm M values.</p>
+      <form class="tool" id="check-form" autocomplete="off">
+        <label class="field-label" for="check-genes">Gene IDs (Wm82.a4, ZH13 or Wm82.a2.v1, up to 20)</label>
+        <textarea id="check-genes" spellcheck="false" placeholder="One gene ID per line"></textarea>
+        <div class="btn-row">
+          <button type="submit" class="btn" id="check-run" disabled>Check stability</button>
+          <button type="button" class="btn btn-outline" id="check-example">Load example</button>
+        </div>
+        <p class="status" id="check-status" role="status" aria-live="polite">Loading…</p>
+      </form>
+
+      <div id="check-results" hidden>
+        <p class="note small" id="check-missing" hidden></p>
+        <div class="results-head">
+          <h3>Results</h3>
+          <button type="button" class="btn btn-small" id="check-csv">Download results (CSV)</button>
+        </div>
+        <p id="check-summary"></p>
+        <div class="table-wrap">
+          <table id="check-table">
+            <thead>
+              <tr>
+                <th scope="col">Gene</th>
+                <th scope="col">Description</th>
+                <th scope="col" class="num">Mean TPM</th>
+                <th scope="col" class="num">CV (%)</th>
+                <th scope="col" class="num">SD of log2 TPM</th>
+                <th scope="col" class="num">geNorm M</th>
+                <th scope="col" class="num">DE in comparisons</th>
+                <th scope="col" class="num">More stable than</th>
+                <th scope="col">Result</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="small muted" id="genorm-note">geNorm M is calculated among the entered genes, so it needs at least 3 genes.</p>
+        <div class="plot-box" id="check-plot"></div>
+      </div>
+
+      <h2>How the ranking works</h2>
+      <ul>
+        <li><strong>Stability</strong> is the standard deviation (SD) of log2(TPM + 1) across the selected samples. Lower values mean more stable expression. This is similar to the variation of Ct values in qPCR.</li>
+        <li><strong>Only expressed genes are ranked:</strong> mean TPM ≥ 10 and TPM ≥ 2 in every selected sample, so the genes can be measured reliably by qPCR.</li>
+        <li><strong>CV</strong> is the coefficient of variation of TPM. <strong>Max fold change</strong> is the ratio of the highest to the lowest value (TPM + 1).</li>
+        <li><strong>DE in comparisons</strong> is how often the gene is differentially expressed (adjusted p &lt; 0.05 and |log2 fold change| ≥ 1) in the stress-versus-control comparisons of the selected conditions. Good reference genes have 0.</li>
+        <li><strong>More stable than</strong> shows the percentage of expressed genes that are less stable than the entered gene. Results: Very stable = more stable than 90% of genes and never DE; Stable = more stable than 75%; Moderate = more stable than 50%; Variable = less stable than half of the genes, or close to zero in some samples. Genes with mean TPM below 10 are marked "Low expression".</li>
+        <li><strong>geNorm M</strong> is the mean variation of the expression ratio of a gene with each of the other entered genes (Vandesompele et al., 2002). Lower is better; values below 0.5 are usually considered stable.</li>
+      </ul>
+      <div class="note">
+        <p><strong>Good practice:</strong> use at least two reference genes, choose them for the stress and tissue you study, and confirm their stability in your own samples (for example with geNorm, NormFinder or BestKeeper) before using them for normalisation.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
+      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/genedata.js"></script>
+  <script src="/assets/js/reference.js"></script>
+</body>
+</html>

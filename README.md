@@ -11,14 +11,18 @@ Source files of the website <https://soybio.github.io>.
 | `data/zh13-wm82a4/` | ZH13 to Wm82.a4 gene ID conversion: dataset page and download files |
 | `data/abiotic-rnaseq/` | Abiotic stress RNA-seq: dataset page, download files, and the data used by the Expression page (`meta.json`, `idmap.json`, `chunks/`) |
 | `expression.html` | Expression page (bar plots and heatmaps) |
+| `reference.html` | qPCR Reference Gene Finder page |
 | `converter.html` | Gene ID Converter page |
 | `resources.html` | Links to databases and software |
 | `about.html` | About page |
 | `assets/css/style.css` | Styles for all pages |
 | `assets/js/converter.js` | Code of the Gene ID Converter |
+| `assets/js/genedata.js` | Shared loading of the RNA-seq data and gene ID lookup |
 | `assets/js/expression.js` | Code of the Expression page |
+| `assets/js/reference.js` | Code of the Reference Genes page |
 | `tools/build_data.py` | Builds the TSV files and `lookup.json` from the Excel file |
 | `tools/build_expression.py` | Builds the files in `data/abiotic-rnaseq/` from the RNA-seq results |
+| `tools/build_reference.py` | Builds `data/abiotic-rnaseq/reference_genes.json` (run after `build_expression.py`) |
 
 ## Updating the ZH13 to Wm82.a4 table
 

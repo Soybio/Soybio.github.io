@@ -1,11 +1,10 @@
 /* Expression browser for the abiotic stress RNA-seq data.
    One gene: bar plot of TPM per condition and a table of DE results.
    Several genes: heatmap of genes x conditions (or samples).
-   Data files are built by tools/build_expression.py. Plots are drawn as SVG. */
+   Data files are built by tools/build_expression.py and loaded with genedata.js. Plots are drawn as SVG. */
 (function () {
   'use strict';
 
-  var BASE = '/data/abiotic-rnaseq/';
   var MAX_GENES = 200;
   var NS = 'http://www.w3.org/2000/svg';
   var FONT = 'Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif';
@@ -17,8 +16,6 @@
 
   var $ = function (id) { return document.getElementById(id); };
   var meta = null;
-  var idmap = null;
-  var chunkCache = {};
   var state = { stress: 'All', tissue: 'All', genes: [], single: null };
 
   // ---------- Small helpers ----------
@@ -97,81 +94,8 @@
   function hideTip() { tip.hidden = true; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
-  // ---------- Data loading ----------
-
-  function getJSON(url) {
-    return fetch(url).then(function (r) {
-      if (!r.ok) throw new Error(url + ': HTTP ' + r.status);
-      return r.json();
-    });
-  }
-
-  function chunkKey(gene) {
-    var m = /^Glyma\.(\d{2}|U)G?(\d+)$/.exec(gene);
-    if (!m) return null;
-    var b = Math.floor(parseInt(m[2], 10) / meta.bucket);
-    return m[1] + '_' + (b < 10 ? '0' + b : b);
-  }
-
-  function loadChunk(key) {
-    if (!chunkCache[key]) {
-      chunkCache[key] = getJSON(BASE + 'chunks/' + key + '.json').catch(function () { return {}; });
-    }
-    return chunkCache[key];
-  }
-
-  function getGene(gene) {
-    var key = chunkKey(gene);
-    if (!key) return Promise.resolve(null);
-    return loadChunk(key).then(function (c) {
-      var g = c[gene];
-      return g ? { gene: gene, zh: g.z, desc: g.d, t: g.t, f: g.f, p: g.p } : null;
-    });
-  }
-
-  function loadIdmap() {
-    if (!idmap) idmap = getJSON(BASE + 'idmap.json');
-    return idmap;
-  }
-
-  // Normalize an entered ID: remove prefixes and transcript/protein suffixes.
-  function canonical(tok) {
-    var s = tok.replace(/^["']+|["']+$/g, '').replace(/^glyma\.Wm82\.gnm\d+\.ann\d+\./i, '');
-    var up = s.toUpperCase()
-      .replace(/\.WM82\.A\d+\.V\d+$/, '')
-      .replace(/\.P$/, '')
-      .replace(/\.(M|T)?\d+$/, '');
-    if (/^SOYZH13_/.test(up)) return { type: 'zh', id: 'SoyZH13_' + up.slice(8) };
-    if (/^GLYMA\./.test(up)) return { type: 'wm', id: 'Glyma.' + up.slice(6) };
-    return { type: 'unknown', id: s };
-  }
-
-  // Returns [{query, data, from, note}] in input order.
-  function resolve(tokens) {
-    var items = tokens.map(function (q) { var c = canonical(q); return { query: q, c: c, data: null, from: '', note: '' }; });
-    var first = items.map(function (it) {
-      if (it.c.type !== 'wm') return null;
-      return getGene(it.c.id).then(function (d) { if (d) { it.data = d; it.from = 'Wm82.a4'; } });
-    });
-    return Promise.all(first).then(function () {
-      var needMap = items.some(function (it) { return !it.data && it.c.type !== 'unknown'; });
-      return needMap ? loadIdmap() : null;
-    }).then(function (map) {
-      return Promise.all(items.map(function (it) {
-        if (it.data) return null;
-        if (it.c.type === 'unknown') { it.note = 'not a ZH13 or Glyma gene ID'; return null; }
-        var target = it.c.type === 'zh' ? map.zh[it.c.id] : map.a2[it.c.id];
-        if (!target) {
-          it.note = it.c.type === 'zh' ? 'no matching Wm82.a4 gene' : 'not found';
-          return null;
-        }
-        return getGene(target).then(function (d) {
-          if (d) { it.data = d; it.from = it.c.type === 'zh' ? 'ZH13' : 'Wm82.a2.v1'; }
-          else it.note = 'matching gene ' + target + ' has no expression data';
-        });
-      }));
-    }).then(function () { return items; });
-  }
+  // Gene data loading and ID lookup are in genedata.js (window.SoybioData).
+  var resolve = SoybioData.resolve;
 
   // ---------- Filters ----------
 
@@ -677,22 +601,8 @@
 
   // ---------- Main actions ----------
 
-  function parseTokens(text) {
-    var seen = {};
-    var out = [];
-    text.split(/[\s,;]+/).forEach(function (t) {
-      t = t.trim();
-      if (!t) return;
-      var k = t.toUpperCase();
-      if (seen[k]) return;
-      seen[k] = true;
-      out.push(t);
-    });
-    return out;
-  }
-
   function plot() {
-    var tokens = parseTokens($('genes').value);
+    var tokens = SoybioData.parseTokens($('genes').value);
     if (!tokens.length) { setStatus('Please enter at least one gene ID.', true); return; }
     if (tokens.length > MAX_GENES) { setStatus('Please enter up to ' + MAX_GENES + ' genes at a time (you entered ' + tokens.length + ').', true); return; }
     setStatus('Loading expression data…');
@@ -769,7 +679,7 @@
     });
   }
 
-  getJSON(BASE + 'meta.json').then(function (m) {
+  SoybioData.loadMeta().then(function (m) {
     meta = m;
     setupFilters();
     $('plot').disabled = false;
