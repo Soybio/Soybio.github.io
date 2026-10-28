@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Soybio – Soybean Bioinformatics and Genomics</title>
+  <title>Soybio | Soybean Bioinformatics and Genomics</title>
   <meta name="description" content="Data, tools and resources for soybean genome research, including a ZH13 to Wm82.a4 gene ID conversion table and an online gene ID converter.">
   <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -11,49 +11,92 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- site header -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="container masthead">
       <a class="brand" href="/">
-        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <img src="/assets/img/logo.svg" alt="" width="44" height="44">
         <span>
           <span class="brand-name">Soybio</span>
           <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/" aria-current="page">Home</a></li>
-          <li><a href="/data.html">Data</a></li>
-          <li><a href="/expression.html">Expression</a></li>
-          <li><a href="/analysis.html">Gene Analysis</a></li>
-          <li><a href="/reference.html">Reference Genes</a></li>
-          <li><a href="/tools.html">Tools</a></li>
-          <li><a href="/converter.html">ID Converter</a></li>
-          <li><a href="/resources.html">Resources</a></li>
-          <li><a href="/about.html">About</a></li>
-        </ul>
-      </nav>
+      <p class="masthead-meta">Genome versions: Wm82.a4, Wm82.a2.v1 and ZH13<br>Free data access, no account needed</p>
     </div>
   </header>
+  <nav class="site-nav" aria-label="Main">
+    <div class="container">
+      <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false">Data</button>
+          <ul class="submenu">
+            <li><a href="/data.html">Data catalogue</a></li>
+            <li class="sub-sep" role="presentation"></li>
+            <li><a href="/data/zh13-wm82a4/">ZH13 to Wm82.a4 gene IDs</a></li>
+            <li><a href="/data/abiotic-rnaseq/">Abiotic stress RNA-seq</a></li>
+            <li><a href="/data/annotation/">Functional annotation (GO, KEGG, Pfam)</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false">Analysis</button>
+          <ul class="submenu">
+            <li><a href="/expression.html">Expression browser</a></li>
+            <li><a href="/analysis.html">Gene analysis and enrichment</a></li>
+            <li><a href="/reference.html">Reference gene finder</a></li>
+            <li><a href="/converter.html">Gene ID converter</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false">Tools</button>
+          <ul class="submenu">
+            <li><a href="/tools.html">Overview of all tools</a></li>
+            <li class="sub-head">Sequence analysis</li>
+            <li><a href="/tools.html#protein">Protein properties</a></li>
+            <li><a href="/tools.html#dna">DNA statistics</a></li>
+            <li><a href="/tools.html#orf">ORF finder</a></li>
+            <li><a href="/tools.html#codon">Codon usage</a></li>
+            <li><a href="/tools.html#align">Pairwise alignment</a></li>
+            <li class="sub-head">Primers and cloning</li>
+            <li><a href="/tools.html#primer">Primer check and in-silico PCR</a></li>
+            <li><a href="/tools.html#restriction">Restriction sites</a></li>
+            <li class="sub-head">qPCR</li>
+            <li><a href="/tools.html#qpcr">Relative expression</a></li>
+            <li><a href="/tools.html#curve">Standard curve</a></li>
+          </ul>
+        </li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /site header -->
 
   <main id="main">
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <h1>Soybean Bioinformatics and Genomics</h1>
-          <p class="lead">This website provides data, tools and resources for soybean genome research. All files are free to download, and no account is needed.</p>
-          <div class="btn-row">
-            <a class="btn" href="/expression.html">Plot gene expression</a>
-            <a class="btn btn-outline" href="/converter.html">Convert gene IDs</a>
-            <a class="btn btn-outline" href="/data.html">Download data</a>
-          </div>
+          <p class="lead">Data, analysis and tools for soybean genome research. All files are free to download, and no account is needed.</p>
+          <form class="gene-search" action="/analysis.html" method="get" role="search">
+            <label class="field-label" for="q-genes">Search by gene ID</label>
+            <div class="search-row">
+              <input type="text" id="q-genes" name="genes" class="text-input mono" placeholder="For example Glyma.14G100000" spellcheck="false" autocomplete="off" required>
+              <button type="submit" class="btn">Gene analysis</button>
+              <button type="submit" class="btn btn-outline" formaction="/expression.html">Expression</button>
+            </div>
+            <p class="small muted">Wm82.a4, Wm82.a2.v1 and ZH13 gene IDs are accepted. Separate several IDs with commas or spaces.</p>
+          </form>
         </div>
         <div class="glance">
           <h2>Current data</h2>
           <dl>
             <div><dt>RNA-seq samples (salt, drought, heat)</dt><dd>192</dd></div>
             <div><dt>Genes with expression data</dt><dd>52,673</dd></div>
+            <div><dt>Genes with GO annotation</dt><dd>24,191</dd></div>
             <div><dt>ZH13 to Wm82.a4 gene pairs</dt><dd>43,348</dd></div>
+            <div><dt>Sequence and qPCR tools</dt><dd>9</dd></div>
             <div><dt>Last updated</dt><dd>October 2026</dd></div>
           </dl>
         </div>
@@ -61,79 +104,137 @@
     </section>
 
     <div class="container content">
-      <h2>On this website</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Expression</h3>
-          <p>Bar plots and heatmaps of gene expression under salt, drought and heat stress, from 192 public RNA-seq samples.</p>
-          <a class="card-link" href="/expression.html">Plot gene expression</a>
-        </div>
-        <div class="card">
-          <h3>Gene Analysis</h3>
-          <p>GO, KEGG and Pfam enrichment for gene lists, and for single genes: co-expressed genes and a predicted function.</p>
-          <a class="card-link" href="/analysis.html">Analyse genes</a>
-        </div>
-        <div class="card">
-          <h3>Tools</h3>
-          <p>Protein properties, ORF finder, codon usage, alignment, primer check, restriction sites and qPCR calculations, in your browser.</p>
-          <a class="card-link" href="/tools.html">Open tools</a>
-        </div>
-        <div class="card">
-          <h3>Reference Genes</h3>
-          <p>Find genes with stable expression under stress for qRT-PCR normalisation, and check how stable your own reference genes are.</p>
-          <a class="card-link" href="/reference.html">Find reference genes</a>
-        </div>
-        <div class="card">
-          <h3>Data</h3>
-          <p>Expression matrices, gene ID conversion tables and other soybean datasets, free to download.</p>
-          <a class="card-link" href="/data.html">Browse data</a>
-        </div>
-        <div class="card">
-          <h3>Gene ID Converter</h3>
-          <p>Paste a list of ZH13, Wm82.a4 or Wm82.a2.v1 gene IDs and get the matching gene IDs in the other genome.</p>
-          <a class="card-link" href="/converter.html">Open the converter</a>
-        </div>
-        <div class="card">
-          <h3>Resources</h3>
-          <p>Links to soybean genome databases, gene function databases and commonly used bioinformatics software.</p>
-          <a class="card-link" href="/resources.html">View resources</a>
-        </div>
+      <h2>Main functions</h2>
+      <div class="func-grid">
+        <section class="func-box">
+          <h3><a href="/data.html">Data</a></h3>
+          <ul class="func-list">
+            <li><a href="/data/zh13-wm82a4/">ZH13 to Wm82.a4 gene IDs</a><span>One-to-one gene table with confidence levels and Wm82.a2.v1 IDs</span></li>
+            <li><a href="/data/abiotic-rnaseq/">Abiotic stress RNA-seq</a><span>TPM values and differential expression for 192 samples under salt, drought and heat stress</span></li>
+            <li><a href="/data/annotation/">Functional annotation</a><span>GO terms, KEGG pathways and Pfam domains of Wm82.a4 genes</span></li>
+          </ul>
+          <a class="func-more" href="/data.html">Data catalogue</a>
+        </section>
+        <section class="func-box">
+          <h3><a href="/analysis.html">Analysis</a></h3>
+          <ul class="func-list">
+            <li><a href="/expression.html">Expression browser</a><span>Bar plots for one gene and heatmaps for gene lists</span></li>
+            <li><a href="/analysis.html">Gene analysis and enrichment</a><span>GO, KEGG and Pfam enrichment, stress response, co-expressed genes and predicted function</span></li>
+            <li><a href="/reference.html">Reference gene finder</a><span>Stably expressed genes for qRT-PCR normalisation under stress</span></li>
+            <li><a href="/converter.html">Gene ID converter</a><span>Convert gene lists between ZH13, Wm82.a4 and Wm82.a2.v1</span></li>
+          </ul>
+          <a class="func-more" href="/analysis.html?genes=Glyma.14G100000">Example: analysis of one gene</a>
+        </section>
+        <section class="func-box">
+          <h3><a href="/tools.html">Tools</a></h3>
+          <ul class="func-list">
+            <li><a href="/tools.html#protein">Sequence analysis</a><span>Protein properties, DNA statistics, ORF finder, codon usage and pairwise alignment</span></li>
+            <li><a href="/tools.html#primer">Primers and cloning</a><span>Primer melting temperature and dimer checks, in-silico PCR and restriction sites</span></li>
+            <li><a href="/tools.html#qpcr">qPCR</a><span>Relative expression by the 2<sup>−ΔΔCt</sup> and Pfaffl methods, and standard curves</span></li>
+          </ul>
+          <a class="func-more" href="/tools.html">All tools</a>
+        </section>
       </div>
 
       <h2>Datasets</h2>
-      <h3>Abiotic stress RNA-seq expression</h3>
-      <p>Expression of 52,673 soybean genes in 192 public RNA-seq samples from 14 studies of salt, drought and heat stress, all processed in the same way against the Wm82.a4 reference. Includes differential expression results for 30 stress-versus-control comparisons.</p>
-      <div class="btn-row">
-        <a class="btn btn-outline" href="/expression.html">Plot genes</a>
-        <a class="btn btn-outline" href="/data/abiotic-rnaseq/">Dataset details and downloads</a>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Dataset</th>
+              <th scope="col">Content</th>
+              <th scope="col">Genome</th>
+              <th scope="col">Use online</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a class="dataset-title" href="/data/abiotic-rnaseq/">Abiotic stress RNA-seq expression</a></td>
+              <td>52,673 genes in 192 public RNA-seq samples from 14 studies, processed in the same way; differential expression for 30 stress-versus-control comparisons</td>
+              <td class="nowrap">Wm82.a4</td>
+              <td class="nowrap"><a href="/expression.html">Expression browser</a></td>
+            </tr>
+            <tr>
+              <td><a class="dataset-title" href="/data/zh13-wm82a4/">ZH13 to Wm82.a4 gene ID conversion</a></td>
+              <td>One-to-one gene pairs between Zhonghuang 13 and Williams 82 assembly 4, with confidence levels, evidence notes and Wm82.a2.v1 IDs</td>
+              <td class="nowrap">ZH13, Wm82.a4</td>
+              <td class="nowrap"><a href="/converter.html">Gene ID converter</a></td>
+            </tr>
+            <tr>
+              <td><a class="dataset-title" href="/data/annotation/">Functional annotation (GO, KEGG, Pfam)</a></td>
+              <td>GO terms (three namespaces), KEGG pathways and Pfam domains of Williams 82 genes</td>
+              <td class="nowrap">Wm82.a4</td>
+              <td class="nowrap"><a href="/analysis.html">Gene analysis</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <h3>ZH13 to Wm82.a4 gene ID conversion</h3>
-      <p>A one-to-one gene ID table between the soybean genomes Zhonghuang 13 (ZH13) and Williams 82 assembly 4 (Wm82.a4). Each gene pair has a confidence level (High, Medium or No correspondence) and a short note on the evidence. Wm82.a2.v1 gene IDs are also given.</p>
-      <div class="btn-row">
-        <a class="btn btn-outline" href="/data/zh13-wm82a4/">Dataset details</a>
-        <a class="btn btn-outline" href="/data/zh13-wm82a4/ZH13_to_Wm82a4_gene_ID_conversion.xlsx" download>
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1a.75.75 0 0 1 .75.75v6.69l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 0 1 1.06-1.06l2.22 2.22V1.75A.75.75 0 0 1 8 1ZM2.75 12.5a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H2.75Z"/></svg>
-          Excel file (7.7 MB)
-        </a>
+      <div class="home-lower">
+        <section>
+          <h2>Updates</h2>
+          <ul class="updates">
+            <li><time datetime="2026-10-28">28 October 2026</time><span>New website layout with drop-down menus. The Tools page now has a side menu and an overview of all tools.</span></li>
+            <li><time datetime="2026-10-28">28 October 2026</time><span>Added the Tools page with nine sequence and qPCR tools, tested against Biopython and SciPy.</span></li>
+            <li><time datetime="2026-10-28">28 October 2026</time><span>Added the Gene Analysis page (GO, KEGG and Pfam enrichment, co-expression and function prediction) and the functional annotation dataset.</span></li>
+            <li><time datetime="2026-10-28">28 October 2026</time><span>Added the qPCR Reference Gene Finder.</span></li>
+            <li><time datetime="2026-10-28">28 October 2026</time><span>Added the abiotic stress RNA-seq expression data and the Expression page with bar plots and heatmaps.</span></li>
+            <li><time datetime="2026-10-27">27 October 2026</time><span>Website launched with the ZH13 to Wm82.a4 gene ID conversion table and the online Gene ID Converter.</span></li>
+          </ul>
+        </section>
+        <aside>
+          <h2>Using this website</h2>
+          <div class="panel">
+            <p><strong>Data access.</strong> All files can be downloaded directly from the dataset pages. No account or registration is needed.</p>
+            <p><strong>Gene IDs.</strong> Data are given for Williams 82 assembly 4 (Wm82.a4). ZH13 and Wm82.a2.v1 gene IDs are converted automatically in the search and analysis pages.</p>
+            <p><strong>Citation.</strong> If you use data or results from this website in a publication, please cite this website and the original studies listed on each dataset page.</p>
+          </div>
+        </aside>
       </div>
-
-      <h2>Updates</h2>
-      <ul class="updates">
-        <li><time datetime="2026-10-28">28 October 2026</time><span>Added the Tools page: nine sequence and qPCR tools, tested against Biopython and SciPy.</span></li>
-        <li><time datetime="2026-10-28">28 October 2026</time><span>Added the Gene Analysis page (GO, KEGG and Pfam enrichment, co-expression and function prediction) and the functional annotation dataset.</span></li>
-        <li><time datetime="2026-10-28">28 October 2026</time><span>Added the qPCR Reference Gene Finder.</span></li>
-        <li><time datetime="2026-10-28">28 October 2026</time><span>Added the abiotic stress RNA-seq expression data and the Expression page with bar plots and heatmaps.</span></li>
-        <li><time datetime="2026-10-27">27 October 2026</time><span>Website launched with the ZH13 to Wm82.a4 gene ID conversion table and the online Gene ID Converter.</span></li>
-      </ul>
     </div>
   </main>
 
+  <!-- site footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
-      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <p class="footer-title">Soybio</p>
+        <p>Data, analysis and tools for soybean genome research. All files are free to download, and the tools run in your web browser.</p>
+      </div>
+      <div>
+        <p class="footer-title">Data</p>
+        <ul>
+          <li><a href="/data.html">Data catalogue</a></li>
+          <li><a href="/data/zh13-wm82a4/">ZH13 to Wm82.a4 gene IDs</a></li>
+          <li><a href="/data/abiotic-rnaseq/">Abiotic stress RNA-seq</a></li>
+          <li><a href="/data/annotation/">Functional annotation (GO, KEGG, Pfam)</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Analysis</p>
+        <ul>
+          <li><a href="/expression.html">Expression browser</a></li>
+          <li><a href="/analysis.html">Gene analysis and enrichment</a></li>
+          <li><a href="/reference.html">Reference gene finder</a></li>
+          <li><a href="/converter.html">Gene ID converter</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Website</p>
+        <ul>
+          <li><a href="/tools.html">Tools</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="https://github.com/Soybio">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">Soybio · Soybean Bioinformatics and Genomics · Last updated: October 2026</div>
     </div>
   </footer>
+  <!-- /site footer -->
+
+  <script src="/assets/js/site.js"></script>
 </body>
 </html>

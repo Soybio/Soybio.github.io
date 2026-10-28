@@ -1,4 +1,4 @@
-# Soybio – Soybean Bioinformatics and Genomics
+# Soybio: Soybean Bioinformatics and Genomics
 
 Source files of the website <https://soybio.github.io>.
 
@@ -27,12 +27,14 @@ Source files of the website <https://soybio.github.io>.
 | `assets/js/seqtools.js` | Calculations of the Tools page |
 | `assets/js/tools.js` | Forms and plots of the Tools page |
 | `assets/js/export.js` | Shared CSV, SVG and PNG download helpers |
+| `assets/js/site.js` | Drop-down menus and the small-screen menu button |
 | `data/annotation/` | GO, KEGG and Pfam files (dataset page, downloads, data for Gene Analysis) |
 | `tools/build_data.py` | Builds the TSV files and `lookup.json` from the Excel file |
 | `tools/build_expression.py` | Builds the files in `data/abiotic-rnaseq/` from the RNA-seq results |
 | `tools/build_annotation.py` | Builds `data/annotation/` from the GO, KEGG and Pfam files in the top folder |
 | `tools/build_coexpression.py` | Builds `data/abiotic-rnaseq/coexp/` (co-expressed genes) |
 | `tools/build_reference.py` | Builds `data/abiotic-rnaseq/reference_genes.json` (run after `build_expression.py`) |
+| `tools/build_nav.py` | Writes the header, main menu and footer into every page. To change the menu, edit it there and run `python3 tools/build_nav.py` |
 
 ## Updating the ZH13 to Wm82.a4 table
 

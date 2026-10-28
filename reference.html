@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reference Genes – Soybio</title>
+  <title>Reference Genes | Soybio</title>
   <meta name="description" content="Find soybean genes with stable expression under salt, drought and heat stress for qRT-PCR normalisation, and check the stability of your own reference genes, based on 192 RNA-seq samples.">
   <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -11,30 +11,67 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- site header -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="container masthead">
       <a class="brand" href="/">
-        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <img src="/assets/img/logo.svg" alt="" width="44" height="44">
         <span>
           <span class="brand-name">Soybio</span>
           <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/data.html">Data</a></li>
-          <li><a href="/expression.html">Expression</a></li>
-          <li><a href="/analysis.html">Gene Analysis</a></li>
-          <li><a href="/reference.html" aria-current="page">Reference Genes</a></li>
-          <li><a href="/tools.html">Tools</a></li>
-          <li><a href="/converter.html">ID Converter</a></li>
-          <li><a href="/resources.html">Resources</a></li>
-          <li><a href="/about.html">About</a></li>
-        </ul>
-      </nav>
+      <p class="masthead-meta">Genome versions: Wm82.a4, Wm82.a2.v1 and ZH13<br>Free data access, no account needed</p>
     </div>
   </header>
+  <nav class="site-nav" aria-label="Main">
+    <div class="container">
+      <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="/">Home</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false">Data</button>
+          <ul class="submenu">
+            <li><a href="/data.html">Data catalogue</a></li>
+            <li class="sub-sep" role="presentation"></li>
+            <li><a href="/data/zh13-wm82a4/">ZH13 to Wm82.a4 gene IDs</a></li>
+            <li><a href="/data/abiotic-rnaseq/">Abiotic stress RNA-seq</a></li>
+            <li><a href="/data/annotation/">Functional annotation (GO, KEGG, Pfam)</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle current" aria-expanded="false">Analysis</button>
+          <ul class="submenu">
+            <li><a href="/expression.html">Expression browser</a></li>
+            <li><a href="/analysis.html">Gene analysis and enrichment</a></li>
+            <li><a href="/reference.html" aria-current="page">Reference gene finder</a></li>
+            <li><a href="/converter.html">Gene ID converter</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false">Tools</button>
+          <ul class="submenu">
+            <li><a href="/tools.html">Overview of all tools</a></li>
+            <li class="sub-head">Sequence analysis</li>
+            <li><a href="/tools.html#protein">Protein properties</a></li>
+            <li><a href="/tools.html#dna">DNA statistics</a></li>
+            <li><a href="/tools.html#orf">ORF finder</a></li>
+            <li><a href="/tools.html#codon">Codon usage</a></li>
+            <li><a href="/tools.html#align">Pairwise alignment</a></li>
+            <li class="sub-head">Primers and cloning</li>
+            <li><a href="/tools.html#primer">Primer check and in-silico PCR</a></li>
+            <li><a href="/tools.html#restriction">Restriction sites</a></li>
+            <li class="sub-head">qPCR</li>
+            <li><a href="/tools.html#qpcr">Relative expression</a></li>
+            <li><a href="/tools.html#curve">Standard curve</a></li>
+          </ul>
+        </li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /site header -->
 
   <main id="main">
     <section class="page-header">
@@ -158,12 +195,48 @@
     </div>
   </main>
 
+  <!-- site footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
-      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <p class="footer-title">Soybio</p>
+        <p>Data, analysis and tools for soybean genome research. All files are free to download, and the tools run in your web browser.</p>
+      </div>
+      <div>
+        <p class="footer-title">Data</p>
+        <ul>
+          <li><a href="/data.html">Data catalogue</a></li>
+          <li><a href="/data/zh13-wm82a4/">ZH13 to Wm82.a4 gene IDs</a></li>
+          <li><a href="/data/abiotic-rnaseq/">Abiotic stress RNA-seq</a></li>
+          <li><a href="/data/annotation/">Functional annotation (GO, KEGG, Pfam)</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Analysis</p>
+        <ul>
+          <li><a href="/expression.html">Expression browser</a></li>
+          <li><a href="/analysis.html">Gene analysis and enrichment</a></li>
+          <li><a href="/reference.html">Reference gene finder</a></li>
+          <li><a href="/converter.html">Gene ID converter</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Website</p>
+        <ul>
+          <li><a href="/tools.html">Tools</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="https://github.com/Soybio">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">Soybio · Soybean Bioinformatics and Genomics · Last updated: October 2026</div>
     </div>
   </footer>
+  <!-- /site footer -->
+
+  <script src="/assets/js/site.js"></script>
 
   <script src="/assets/js/genedata.js"></script>
   <script src="/assets/js/reference.js"></script>

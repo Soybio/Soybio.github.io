@@ -665,22 +665,25 @@
 
   // ---------- Setup ----------
 
-  var TOOLS = ['protein', 'dna', 'orf', 'codon', 'align', 'primer', 'restriction', 'qpcr', 'curve'];
+  // The side menu and the Tools drop-down menu link to #protein, #dna, ...; no hash shows the overview.
+  var TOOLS = ['overview', 'protein', 'dna', 'orf', 'codon', 'align', 'primer', 'restriction', 'qpcr', 'curve'];
   function select(name) {
-    if (TOOLS.indexOf(name) < 0) name = 'protein';
+    if (TOOLS.indexOf(name) < 0) name = 'overview';
     TOOLS.forEach(function (t) {
       $('tool-' + t).hidden = t !== name;
-      var b = document.querySelector('[data-tool="' + t + '"]');
-      b.setAttribute('aria-pressed', t === name ? 'true' : 'false');
+      var link = document.querySelector('.tool-side [data-tool="' + t + '"]');
+      if (t === name) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
     });
+    var href = '/tools.html' + (name === 'overview' ? '' : '#' + name);
+    Array.prototype.forEach.call(document.querySelectorAll('.submenu a[href^="/tools.html"]'), function (a) {
+      if (a.getAttribute('href') === href) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    // If the page was scrolled down, bring the chosen tool into view
+    var top = $('tools-layout').getBoundingClientRect().top;
+    if (top < 0) window.scrollTo(0, window.pageYOffset + top - 64);
   }
-  Array.prototype.forEach.call(document.querySelectorAll('[data-tool]'), function (b) {
-    b.addEventListener('click', function () {
-      var t = b.getAttribute('data-tool');
-      select(t);
-      if (history.replaceState) history.replaceState(null, '', '#' + t);
-    });
-  });
   select(location.hash.slice(1));
   window.addEventListener('hashchange', function () { select(location.hash.slice(1)); });
 

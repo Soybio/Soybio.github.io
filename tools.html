@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tools – Soybio</title>
+  <title>Tools | Soybio</title>
   <meta name="description" content="Sequence and qPCR tools that run in your browser: protein properties, DNA statistics, ORF finder, codon usage, pairwise alignment, primer check and in-silico PCR, restriction sites, relative expression and qPCR standard curves.">
   <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -11,30 +11,67 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- site header -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="container masthead">
       <a class="brand" href="/">
-        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <img src="/assets/img/logo.svg" alt="" width="44" height="44">
         <span>
           <span class="brand-name">Soybio</span>
           <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/data.html">Data</a></li>
-          <li><a href="/expression.html">Expression</a></li>
-          <li><a href="/analysis.html">Gene Analysis</a></li>
-          <li><a href="/reference.html">Reference Genes</a></li>
-          <li><a href="/tools.html" aria-current="page">Tools</a></li>
-          <li><a href="/converter.html">ID Converter</a></li>
-          <li><a href="/resources.html">Resources</a></li>
-          <li><a href="/about.html">About</a></li>
-        </ul>
-      </nav>
+      <p class="masthead-meta">Genome versions: Wm82.a4, Wm82.a2.v1 and ZH13<br>Free data access, no account needed</p>
     </div>
   </header>
+  <nav class="site-nav" aria-label="Main">
+    <div class="container">
+      <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="/">Home</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false">Data</button>
+          <ul class="submenu">
+            <li><a href="/data.html">Data catalogue</a></li>
+            <li class="sub-sep" role="presentation"></li>
+            <li><a href="/data/zh13-wm82a4/">ZH13 to Wm82.a4 gene IDs</a></li>
+            <li><a href="/data/abiotic-rnaseq/">Abiotic stress RNA-seq</a></li>
+            <li><a href="/data/annotation/">Functional annotation (GO, KEGG, Pfam)</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false">Analysis</button>
+          <ul class="submenu">
+            <li><a href="/expression.html">Expression browser</a></li>
+            <li><a href="/analysis.html">Gene analysis and enrichment</a></li>
+            <li><a href="/reference.html">Reference gene finder</a></li>
+            <li><a href="/converter.html">Gene ID converter</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle current" aria-expanded="false">Tools</button>
+          <ul class="submenu">
+            <li><a href="/tools.html" aria-current="page">Overview of all tools</a></li>
+            <li class="sub-head">Sequence analysis</li>
+            <li><a href="/tools.html#protein">Protein properties</a></li>
+            <li><a href="/tools.html#dna">DNA statistics</a></li>
+            <li><a href="/tools.html#orf">ORF finder</a></li>
+            <li><a href="/tools.html#codon">Codon usage</a></li>
+            <li><a href="/tools.html#align">Pairwise alignment</a></li>
+            <li class="sub-head">Primers and cloning</li>
+            <li><a href="/tools.html#primer">Primer check and in-silico PCR</a></li>
+            <li><a href="/tools.html#restriction">Restriction sites</a></li>
+            <li class="sub-head">qPCR</li>
+            <li><a href="/tools.html#qpcr">Relative expression</a></li>
+            <li><a href="/tools.html#curve">Standard curve</a></li>
+          </ul>
+        </li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /site header -->
 
   <main id="main">
     <section class="page-header">
@@ -46,20 +83,65 @@
     </section>
 
     <div class="container content">
-      <div class="tool-menu" role="group" aria-label="Choose a tool">
-        <button type="button" data-tool="protein" aria-pressed="true"><strong>Protein properties</strong><span>MW, pI, stability, hydropathy</span></button>
-        <button type="button" data-tool="dna" aria-pressed="false"><strong>DNA statistics</strong><span>GC content, reverse complement</span></button>
-        <button type="button" data-tool="orf" aria-pressed="false"><strong>ORF finder</strong><span>Six-frame ORFs and translation</span></button>
-        <button type="button" data-tool="codon" aria-pressed="false"><strong>Codon usage</strong><span>Counts, RSCU, GC3</span></button>
-        <button type="button" data-tool="align" aria-pressed="false"><strong>Pairwise alignment</strong><span>Global or local, DNA or protein</span></button>
-        <button type="button" data-tool="primer" aria-pressed="false"><strong>Primer check</strong><span>Tm, dimers, in-silico PCR</span></button>
-        <button type="button" data-tool="restriction" aria-pressed="false"><strong>Restriction sites</strong><span>Cut sites, fragments, map</span></button>
-        <button type="button" data-tool="qpcr" aria-pressed="false"><strong>qPCR relative expression</strong><span>2<sup>−ΔΔCt</sup> and Pfaffl</span></button>
-        <button type="button" data-tool="curve" aria-pressed="false"><strong>qPCR standard curve</strong><span>Primer efficiency, R²</span></button>
-      </div>
+     <div class="tools-layout" id="tools-layout">
+      <nav class="tool-side" aria-label="Tools">
+        <ul>
+          <li><a href="#overview" data-tool="overview">Overview of all tools</a></li>
+        </ul>
+        <p class="side-head">Sequence analysis</p>
+        <ul>
+          <li><a href="#protein" data-tool="protein">Protein properties</a></li>
+          <li><a href="#dna" data-tool="dna">DNA statistics</a></li>
+          <li><a href="#orf" data-tool="orf">ORF finder</a></li>
+          <li><a href="#codon" data-tool="codon">Codon usage</a></li>
+          <li><a href="#align" data-tool="align">Pairwise alignment</a></li>
+        </ul>
+        <p class="side-head">Primers and cloning</p>
+        <ul>
+          <li><a href="#primer" data-tool="primer">Primer check and in-silico PCR</a></li>
+          <li><a href="#restriction" data-tool="restriction">Restriction sites</a></li>
+        </ul>
+        <p class="side-head">qPCR</p>
+        <ul>
+          <li><a href="#qpcr" data-tool="qpcr">Relative expression</a></li>
+          <li><a href="#curve" data-tool="curve">Standard curve</a></li>
+        </ul>
+      </nav>
+
+      <div class="tool-main">
+      <!-- Overview -->
+      <section class="tool-panel" id="tool-overview">
+        <h2>Overview of all tools</h2>
+        <p>Choose a tool from the list. Each tool has an example that can be loaded with one click. Plots can be saved as SVG or PNG and tables as CSV.</p>
+        <div class="table-wrap">
+          <table class="overview-table">
+            <thead>
+              <tr><th scope="col">Tool</th><th scope="col">Input</th><th scope="col">Output</th></tr>
+            </thead>
+            <tbody>
+              <tr class="group-row"><th scope="rowgroup" colspan="3">Sequence analysis</th></tr>
+              <tr><td><a href="#protein">Protein properties</a></td><td>Protein sequence</td><td>Molecular weight, pI, net charge, extinction coefficient, instability index, aliphatic index and GRAVY; amino acid composition chart and hydropathy plot</td></tr>
+              <tr><td><a href="#dna">DNA statistics</a></td><td>DNA sequence</td><td>Base composition, GC content, GC plot along the sequence and reverse complement</td></tr>
+              <tr><td><a href="#orf">ORF finder</a></td><td>DNA sequence</td><td>Open reading frames in all six frames, ORF map, protein sequences and translation of any frame</td></tr>
+              <tr><td><a href="#codon">Codon usage</a></td><td>Coding sequence</td><td>Codon counts, relative synonymous codon usage (RSCU) and GC content at codon positions 1, 2 and 3</td></tr>
+              <tr><td><a href="#align">Pairwise alignment</a></td><td>Two DNA or protein sequences</td><td>Global or local alignment with score, identity, similarity and gaps</td></tr>
+              <tr class="group-row"><th scope="rowgroup" colspan="3">Primers and cloning</th></tr>
+              <tr><td><a href="#primer">Primer check and in-silico PCR</a></td><td>Primer pair; template (optional)</td><td>Melting temperature, GC content, 3′ end and dimer checks; PCR products on the template</td></tr>
+              <tr><td><a href="#restriction">Restriction sites</a></td><td>DNA sequence</td><td>Cut positions and fragment sizes for 37 enzymes, restriction map and enzymes that do not cut</td></tr>
+              <tr class="group-row"><th scope="rowgroup" colspan="3">qPCR</th></tr>
+              <tr><td><a href="#qpcr">Relative expression</a></td><td>Ct values of target and reference genes</td><td>Fold change by the 2<sup>−ΔΔCt</sup> or Pfaffl method, t-test against the control and bar plot</td></tr>
+              <tr><td><a href="#curve">Standard curve</a></td><td>Ct values of a dilution series</td><td>Slope, R², amplification efficiency and amplification factor, with plot</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Accuracy</h3>
+        <p>The constants used by the tools (amino acid masses, pK values, nearest-neighbour parameters, the genetic code, BLOSUM62 and REBASE enzyme data) are taken from Biopython. The results were compared with Biopython and SciPy in more than 4,500 test cases and agree in all of them. Where a calculation follows a published method, the method and its reference are given with the tool.</p>
+        <h3>Privacy</h3>
+        <p>All calculations run in your web browser. Sequences and data you paste are not uploaded or stored.</p>
+      </section>
 
       <!-- 1. Protein properties -->
-      <section class="tool-panel" id="tool-protein">
+      <section class="tool-panel" id="tool-protein" hidden>
         <h2>Protein properties</h2>
         <p>Physical and chemical parameters of a protein, as in ExPASy ProtParam, with an amino acid composition chart and a hydropathy plot.</p>
         <form class="tool" id="form-protein" autocomplete="off">
@@ -225,15 +307,53 @@
         </form>
         <div class="tool-out" id="sc-out" hidden></div>
       </section>
+      </div>
+     </div>
     </div>
   </main>
 
+  <!-- site footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
-      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <p class="footer-title">Soybio</p>
+        <p>Data, analysis and tools for soybean genome research. All files are free to download, and the tools run in your web browser.</p>
+      </div>
+      <div>
+        <p class="footer-title">Data</p>
+        <ul>
+          <li><a href="/data.html">Data catalogue</a></li>
+          <li><a href="/data/zh13-wm82a4/">ZH13 to Wm82.a4 gene IDs</a></li>
+          <li><a href="/data/abiotic-rnaseq/">Abiotic stress RNA-seq</a></li>
+          <li><a href="/data/annotation/">Functional annotation (GO, KEGG, Pfam)</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Analysis</p>
+        <ul>
+          <li><a href="/expression.html">Expression browser</a></li>
+          <li><a href="/analysis.html">Gene analysis and enrichment</a></li>
+          <li><a href="/reference.html">Reference gene finder</a></li>
+          <li><a href="/converter.html">Gene ID converter</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Website</p>
+        <ul>
+          <li><a href="/tools.html">Tools</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="https://github.com/Soybio">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">Soybio · Soybean Bioinformatics and Genomics · Last updated: October 2026</div>
     </div>
   </footer>
+  <!-- /site footer -->
+
+  <script src="/assets/js/site.js"></script>
 
   <script src="/assets/js/seqdata.js"></script>
   <script src="/assets/js/seqtools.js"></script>
