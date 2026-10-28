@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tools – Soybio</title>
+  <meta name="description" content="Sequence and qPCR tools that run in your browser: protein properties, DNA statistics, ORF finder, codon usage, pairwise alignment, primer check and in-silico PCR, restriction sites, relative expression and qPCR standard curves.">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo.svg" alt="" width="40" height="40">
+        <span>
+          <span class="brand-name">Soybio</span>
+          <span class="brand-tag">Soybean Bioinformatics and Genomics</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/data.html">Data</a></li>
+          <li><a href="/expression.html">Expression</a></li>
+          <li><a href="/analysis.html">Gene Analysis</a></li>
+          <li><a href="/reference.html">Reference Genes</a></li>
+          <li><a href="/tools.html" aria-current="page">Tools</a></li>
+          <li><a href="/converter.html">ID Converter</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Tools</div>
+        <h1>Tools</h1>
+        <p class="lead">Sequence and qPCR tools that run in your web browser. Your sequences and data are not sent anywhere. All calculations were tested against Biopython and SciPy.</p>
+      </div>
+    </section>
+
+    <div class="container content">
+      <div class="tool-menu" role="group" aria-label="Choose a tool">
+        <button type="button" data-tool="protein" aria-pressed="true"><strong>Protein properties</strong><span>MW, pI, stability, hydropathy</span></button>
+        <button type="button" data-tool="dna" aria-pressed="false"><strong>DNA statistics</strong><span>GC content, reverse complement</span></button>
+        <button type="button" data-tool="orf" aria-pressed="false"><strong>ORF finder</strong><span>Six-frame ORFs and translation</span></button>
+        <button type="button" data-tool="codon" aria-pressed="false"><strong>Codon usage</strong><span>Counts, RSCU, GC3</span></button>
+        <button type="button" data-tool="align" aria-pressed="false"><strong>Pairwise alignment</strong><span>Global or local, DNA or protein</span></button>
+        <button type="button" data-tool="primer" aria-pressed="false"><strong>Primer check</strong><span>Tm, dimers, in-silico PCR</span></button>
+        <button type="button" data-tool="restriction" aria-pressed="false"><strong>Restriction sites</strong><span>Cut sites, fragments, map</span></button>
+        <button type="button" data-tool="qpcr" aria-pressed="false"><strong>qPCR relative expression</strong><span>2<sup>−ΔΔCt</sup> and Pfaffl</span></button>
+        <button type="button" data-tool="curve" aria-pressed="false"><strong>qPCR standard curve</strong><span>Primer efficiency, R²</span></button>
+      </div>
+
+      <!-- 1. Protein properties -->
+      <section class="tool-panel" id="tool-protein">
+        <h2>Protein properties</h2>
+        <p>Physical and chemical parameters of a protein, as in ExPASy ProtParam, with an amino acid composition chart and a hydropathy plot.</p>
+        <form class="tool" id="form-protein" autocomplete="off">
+          <label class="field-label" for="prot-seq">Protein sequence (plain or FASTA)</label>
+          <textarea id="prot-seq" spellcheck="false" placeholder="MASSEKKVLVLG..."></textarea>
+          <div class="filters">
+            <div class="filter"><label class="filter-label" for="prot-win">Hydropathy window</label>
+              <select id="prot-win"><option value="9">9 (surface regions)</option><option value="19">19 (transmembrane segments)</option></select></div>
+          </div>
+          <div class="btn-row"><button type="submit" class="btn">Calculate</button><button type="button" class="btn btn-outline" id="ex-protein">Load example</button></div>
+        </form>
+        <div class="tool-out" id="prot-out" hidden></div>
+        <details class="method"><summary>Methods</summary>
+          <p>Molecular weight from average residue masses; theoretical pI with the pK values of Bjellqvist et al. (as ExPASy); extinction coefficients by Pace et al. (1995); instability index by Guruprasad et al. (1990), above 40 = unstable; aliphatic index by Ikai (1980); GRAVY and hydropathy by Kyte &amp; Doolittle (1982); aromaticity by Lobry (1994). Results match Biopython ProtParam.</p>
+        </details>
+      </section>
+
+      <!-- 2. DNA statistics -->
+      <section class="tool-panel" id="tool-dna" hidden>
+        <h2>DNA statistics</h2>
+        <p>Base composition, GC content along the sequence and the reverse complement.</p>
+        <form class="tool" id="form-dna" autocomplete="off">
+          <label class="field-label" for="dna-seq">DNA sequence (plain or FASTA)</label>
+          <textarea id="dna-seq" spellcheck="false" placeholder="ATGGCTTCT..."></textarea>
+          <div class="filters">
+            <div class="filter"><label class="filter-label" for="dna-win">GC window</label>
+              <select id="dna-win"><option value="50">50 bp</option><option value="100" selected>100 bp</option><option value="200">200 bp</option><option value="500">500 bp</option></select></div>
+          </div>
+          <div class="btn-row"><button type="submit" class="btn">Calculate</button><button type="button" class="btn btn-outline" id="ex-dna">Load example</button></div>
+        </form>
+        <div class="tool-out" id="dna-out" hidden></div>
+      </section>
+
+      <!-- 3. ORF finder -->
+      <section class="tool-panel" id="tool-orf" hidden>
+        <h2>ORF finder and translation</h2>
+        <p>Finds open reading frames (ATG to stop codon) in all six frames and translates the sequence in a chosen frame (standard genetic code).</p>
+        <form class="tool" id="form-orf" autocomplete="off">
+          <label class="field-label" for="orf-seq">DNA sequence (plain or FASTA)</label>
+          <textarea id="orf-seq" spellcheck="false"></textarea>
+          <div class="filters">
+            <div class="filter"><label class="filter-label" for="orf-min">Minimum ORF length</label>
+              <select id="orf-min"><option value="30">30 aa</option><option value="50">50 aa</option><option value="100" selected>100 aa</option><option value="200">200 aa</option></select></div>
+            <div class="filter"><label class="filter-label" for="orf-frame">Translate frame</label>
+              <select id="orf-frame"><option value="1">+1</option><option value="2">+2</option><option value="3">+3</option><option value="-1">−1</option><option value="-2">−2</option><option value="-3">−3</option></select></div>
+          </div>
+          <div class="btn-row"><button type="submit" class="btn">Find ORFs</button><button type="button" class="btn btn-outline" id="ex-orf">Load example</button></div>
+        </form>
+        <div class="tool-out" id="orf-out" hidden></div>
+      </section>
+
+      <!-- 4. Codon usage -->
+      <section class="tool-panel" id="tool-codon" hidden>
+        <h2>Codon usage</h2>
+        <p>Codon counts, relative synonymous codon usage (RSCU) and GC content at the three codon positions of a coding sequence.</p>
+        <form class="tool" id="form-codon" autocomplete="off">
+          <label class="field-label" for="codon-seq">Coding sequence, in frame from the start codon (plain or FASTA)</label>
+          <textarea id="codon-seq" spellcheck="false"></textarea>
+          <div class="btn-row"><button type="submit" class="btn">Calculate</button><button type="button" class="btn btn-outline" id="ex-codon">Load example</button></div>
+        </form>
+        <div class="tool-out" id="codon-out" hidden></div>
+      </section>
+
+      <!-- 5. Pairwise alignment -->
+      <section class="tool-panel" id="tool-align" hidden>
+        <h2>Pairwise alignment</h2>
+        <p>Optimal alignment of two sequences with affine gap penalties: global (Needleman–Wunsch) or local (Smith–Waterman).</p>
+        <form class="tool" id="form-align" autocomplete="off">
+          <div class="filters">
+            <div class="filter"><label class="filter-label" for="aln-type">Sequence type</label>
+              <select id="aln-type"><option value="protein">Protein (BLOSUM62)</option><option value="dna">DNA</option></select></div>
+            <div class="filter"><label class="filter-label" for="aln-mode">Mode</label>
+              <select id="aln-mode"><option value="global">Global</option><option value="local">Local</option></select></div>
+            <div class="filter"><label class="filter-label" for="aln-open">Gap open</label>
+              <select id="aln-open"><option>5</option><option selected>10</option><option>11</option><option>15</option><option>16</option></select></div>
+            <div class="filter"><label class="filter-label" for="aln-ext">Gap extend</label>
+              <select id="aln-ext"><option selected>0.5</option><option>1</option><option>2</option><option>4</option></select></div>
+          </div>
+          <div class="filters" id="aln-dna-opts" hidden>
+            <div class="filter"><label class="filter-label" for="aln-match">Match</label>
+              <select id="aln-match"><option>1</option><option>2</option><option selected>5</option></select></div>
+            <div class="filter"><label class="filter-label" for="aln-mis">Mismatch</label>
+              <select id="aln-mis"><option>-1</option><option>-3</option><option selected>-4</option></select></div>
+          </div>
+          <label class="field-label" for="aln-a">Sequence 1</label>
+          <textarea id="aln-a" spellcheck="false" class="short"></textarea>
+          <label class="field-label spaced" for="aln-b">Sequence 2</label>
+          <textarea id="aln-b" spellcheck="false" class="short"></textarea>
+          <div class="btn-row"><button type="submit" class="btn">Align</button><button type="button" class="btn btn-outline" id="ex-align">Load example</button></div>
+        </form>
+        <div class="tool-out" id="aln-out" hidden></div>
+        <details class="method"><summary>Methods</summary>
+          <p>Dynamic programming with affine gaps (Gotoh 1982); a gap of length k costs open + (k − 1) × extend, as in EMBOSS and Biopython. Scores match Biopython PairwiseAligner. Identity and similarity are given as a percentage of the alignment length. Up to about 2,000 × 2,000 residues.</p>
+        </details>
+      </section>
+
+      <!-- 6. Primer check -->
+      <section class="tool-panel" id="tool-primer" hidden>
+        <h2>Primer check and in-silico PCR</h2>
+        <p>Melting temperature, GC content, 3′ end and dimer checks for a primer pair, and the PCR products on a template sequence.</p>
+        <form class="tool" id="form-primer" autocomplete="off">
+          <div class="two-col">
+            <div><label class="field-label" for="pr-f">Forward primer (5′→3′)</label><input type="text" id="pr-f" class="text-input mono" spellcheck="false"></div>
+            <div><label class="field-label" for="pr-r">Reverse primer (5′→3′)</label><input type="text" id="pr-r" class="text-input mono" spellcheck="false"></div>
+          </div>
+          <div class="filters">
+            <div class="filter"><label class="filter-label" for="pr-na">Na⁺ (mM)</label><input type="number" id="pr-na" class="num-input" value="50" min="1" step="any"></div>
+            <div class="filter"><label class="filter-label" for="pr-mg">Mg²⁺ (mM)</label><input type="number" id="pr-mg" class="num-input" value="1.5" min="0" step="any"></div>
+            <div class="filter"><label class="filter-label" for="pr-dntp">dNTPs (mM)</label><input type="number" id="pr-dntp" class="num-input" value="0.2" min="0" step="any"></div>
+            <div class="filter"><label class="filter-label" for="pr-conc">Primer (nM)</label><input type="number" id="pr-conc" class="num-input" value="250" min="1" step="any"></div>
+          </div>
+          <label class="field-label" for="pr-template">Template sequence (optional, for in-silico PCR)</label>
+          <textarea id="pr-template" spellcheck="false" class="short"></textarea>
+          <div class="btn-row"><button type="submit" class="btn">Check primers</button><button type="button" class="btn btn-outline" id="ex-primer">Load example</button></div>
+        </form>
+        <div class="tool-out" id="pr-out" hidden></div>
+      </section>
+
+      <!-- 7. Restriction sites -->
+      <section class="tool-panel" id="tool-restriction" hidden>
+        <h2>Restriction sites</h2>
+        <p>Cut positions and fragment sizes for common restriction enzymes (REBASE data), a restriction map, and the enzymes that do not cut, for choosing cloning sites.</p>
+        <form class="tool" id="form-restriction" autocomplete="off">
+          <label class="field-label" for="re-seq">DNA sequence (linear; plain or FASTA)</label>
+          <textarea id="re-seq" spellcheck="false"></textarea>
+          <fieldset class="options"><legend>Enzymes <button type="button" class="link-btn" id="re-all">all</button> · <button type="button" class="link-btn" id="re-none">none</button></legend>
+            <div class="check-grid" id="re-enzymes"></div></fieldset>
+          <div class="btn-row"><button type="submit" class="btn">Find sites</button><button type="button" class="btn btn-outline" id="ex-restriction">Load example</button></div>
+        </form>
+        <div class="tool-out" id="re-out" hidden></div>
+        <details class="method"><summary>Methods</summary>
+          <p>Recognition sites and cut positions from REBASE (via Biopython), searched on both strands, so Type IIS enzymes such as BsaI, BbsI, BsmBI and SapI are found in either orientation. Cut positions match Biopython Restriction.search for linear DNA.</p>
+        </details>
+      </section>
+
+      <!-- 8. qPCR relative expression -->
+      <section class="tool-panel" id="tool-qpcr" hidden>
+        <h2>qPCR relative expression</h2>
+        <p>Fold change of a target gene relative to a control group, normalised to one or more reference genes. Use the <a href="/reference.html">Reference Gene Finder</a> to choose stable reference genes.</p>
+        <form class="tool" id="form-qpcr" autocomplete="off">
+          <label class="field-label" for="qp-data">Ct values: one row per biological replicate (mean of technical replicates). Columns: sample, group, target Ct, reference gene Ct (one or more columns).</label>
+          <textarea id="qp-data" spellcheck="false" placeholder="Sample  Group    Target  Ref1&#10;C1      Control  26.10   19.85&#10;S1      Salt     23.42   19.91"></textarea>
+          <div class="filters">
+            <div class="filter"><label class="filter-label" for="qp-control">Control group</label><select id="qp-control"></select></div>
+            <div class="filter"><label class="filter-label" for="qp-et">Amplification factor, target</label><input type="number" id="qp-et" class="num-input" value="2" min="1" max="2.2" step="0.001"></div>
+            <div class="filter"><label class="filter-label" for="qp-er">Amplification factor, reference</label><input type="number" id="qp-er" class="num-input" value="2" min="1" max="2.2" step="0.001"></div>
+            <div class="filter"><label class="toggle"><input type="checkbox" id="qp-log"> Plot log2 fold change</label></div>
+          </div>
+          <p class="small muted help">Amplification factor 2 = 100% efficiency (the 2<sup>−ΔΔCt</sup> method). Enter measured values (for example 1.95) from the standard curve tool to use the Pfaffl method.</p>
+          <div class="btn-row"><button type="submit" class="btn">Calculate</button><button type="button" class="btn btn-outline" id="ex-qpcr">Load example</button></div>
+        </form>
+        <div class="tool-out" id="qp-out" hidden></div>
+      </section>
+
+      <!-- 9. qPCR standard curve -->
+      <section class="tool-panel" id="tool-curve" hidden>
+        <h2>qPCR standard curve and primer efficiency</h2>
+        <p>Amplification efficiency of a primer pair from a dilution series.</p>
+        <form class="tool" id="form-curve" autocomplete="off">
+          <label class="field-label" for="sc-data">Two columns: relative quantity (for example 1, 0.1, 0.01 …) and Ct. Replicates can be entered as separate rows.</label>
+          <textarea id="sc-data" spellcheck="false" placeholder="1      17.12&#10;0.1    20.45&#10;0.01   23.80"></textarea>
+          <div class="btn-row"><button type="submit" class="btn">Calculate</button><button type="button" class="btn btn-outline" id="ex-curve">Load example</button></div>
+        </form>
+        <div class="tool-out" id="sc-out" hidden></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Soybio</strong> · Soybean Bioinformatics and Genomics</p>
+      <p>Last updated: October 2026 · <a href="https://github.com/Soybio">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/seqdata.js"></script>
+  <script src="/assets/js/seqtools.js"></script>
+  <script src="/assets/js/export.js"></script>
+  <script src="/assets/js/tools.js"></script>
+</body>
+</html>

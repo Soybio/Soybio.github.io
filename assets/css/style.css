@@ -17,7 +17,7 @@
   --font-serif: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
   --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
 
-  --width: 1100px;
+  --width: 1200px;
   --radius: 6px;
 }
 
@@ -232,9 +232,9 @@ pre code {
 
 .site-nav a {
   display: block;
-  padding: 0.45rem 0.5rem;
+  padding: 0.45rem 0.45rem;
   color: var(--text);
-  font-size: 0.93rem;
+  font-size: 0.92rem;
   font-weight: 500;
   border-bottom: 2px solid transparent;
 }
@@ -972,6 +972,153 @@ tr.sig-row td {
 
 .bg-box textarea {
   min-height: 110px;
+}
+
+/* ---------- Tools page ---------- */
+
+.tool-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 1.6rem 0 0.4rem;
+}
+
+.tool-menu button {
+  text-align: left;
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.tool-menu button strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.tool-menu button span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.tool-menu button:hover {
+  border-color: var(--brand);
+}
+
+.tool-menu button[aria-pressed="true"] {
+  border-color: var(--brand);
+  background: var(--brand-light);
+  box-shadow: inset 3px 0 0 var(--brand);
+}
+
+.tool-menu button:focus-visible,
+.link-btn:focus-visible,
+.text-input:focus,
+.num-input:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.tool-panel h2 {
+  margin-top: 1.8rem;
+}
+
+.tool textarea.short {
+  min-height: 110px;
+}
+
+.tool label.field-label.spaced {
+  margin-top: 0.8rem;
+}
+
+.text-input,
+.num-input {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid #b9c2bd;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text);
+}
+
+.text-input {
+  width: 100%;
+}
+
+.num-input {
+  width: 6.5rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+  gap: 0.2rem 0.6rem;
+}
+
+.check-grid label {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.link-btn {
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 400;
+  border: 0;
+  background: none;
+  color: var(--link);
+  cursor: pointer;
+  padding: 0;
+}
+
+.tool-out h4 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin: 1.4rem 0 0.5rem;
+}
+
+.seq-out {
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre;
+}
+
+.seq-out.aln {
+  max-height: 520px;
+}
+
+.plot-dl {
+  justify-content: flex-end;
+  margin-bottom: 0.4rem;
+}
+
+details.method {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  color: #3d454d;
+}
+
+details.method summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--link);
+}
+
+@media (max-width: 600px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Footer ---------- */

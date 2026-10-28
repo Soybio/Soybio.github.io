@@ -13,6 +13,7 @@ Source files of the website <https://soybio.github.io>.
 | `expression.html` | Expression page (bar plots and heatmaps) |
 | `analysis.html` | Gene Analysis page (enrichment, co-expression) |
 | `reference.html` | qPCR Reference Gene Finder page |
+| `tools.html` | Tools page (sequence and qPCR tools) |
 | `converter.html` | Gene ID Converter page |
 | `resources.html` | Links to databases and software |
 | `about.html` | About page |
@@ -22,6 +23,9 @@ Source files of the website <https://soybio.github.io>.
 | `assets/js/expression.js` | Code of the Expression page |
 | `assets/js/reference.js` | Code of the Reference Genes page |
 | `assets/js/analysis.js` | Code of the Gene Analysis page |
+| `assets/js/seqdata.js` | Constants for the Tools page, generated from Biopython by `tools/build_seqdata.py` |
+| `assets/js/seqtools.js` | Calculations of the Tools page |
+| `assets/js/tools.js` | Forms and plots of the Tools page |
 | `assets/js/export.js` | Shared CSV, SVG and PNG download helpers |
 | `data/annotation/` | GO, KEGG and Pfam files (dataset page, downloads, data for Gene Analysis) |
 | `tools/build_data.py` | Builds the TSV files and `lookup.json` from the Excel file |
@@ -47,6 +51,16 @@ Source files of the website <https://soybio.github.io>.
    The TPM matrix columns must be in the same order as the rows of the SRA list.
 3. Update the numbers in `data/abiotic-rnaseq/index.html`, `expression.html` and `index.html`.
 4. Commit and push. The zip file itself is not uploaded (it is listed in `.gitignore`).
+
+## Checking the Tools page
+
+The calculations in `assets/js/seqtools.js` are compared with Biopython and SciPy on random test cases:
+
+    python3 tools/validate_tools.py make cases.json
+    node tools/validate_tools.js cases.json results.json
+    python3 tools/validate_tools.py check cases.json results.json
+
+Run this after any change to `seqtools.js` or `seqdata.js`; every line should show 0 failed.
 
 ## Adding a new dataset
 
